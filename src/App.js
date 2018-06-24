@@ -111,7 +111,7 @@ class App extends Component {
             <Nav className="ml-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Select a Vehicle
+                <i class="fas fa-space-shuttle"></i> Select a Vehicle
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem>
@@ -130,10 +130,10 @@ class App extends Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/find-a-dealer/"><i class="fas fa-map-marker-alt"></i> Find a Dealer</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="/build-and-price/"><i class="fas fa-cogs"></i> Build & Price</NavLink>
               </NavItem>
               
             </Nav>

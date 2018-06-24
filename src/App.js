@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SiteCarousel from './components/SiteCarousel';
 import TopNav from './components/TopNav';
+import VehicleBrowser from './components/VehicleBrowser';
 
 class App extends Component {
 
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="App">
         <TopNav />
         <SiteCarousel />
+        <VehicleBrowser />
       </div>
     );
   }

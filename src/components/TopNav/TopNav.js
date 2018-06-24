@@ -30,7 +30,6 @@ class TopNav extends React.Component {
   }
 
   render() {
-    debugger;
     const VehicleSelections = this.props.data.map((item) => {
       return <DropdownItem
                 key={item.detailKey}
@@ -54,10 +53,10 @@ class TopNav extends React.Component {
             </DropdownMenu>
           </UncontrolledDropdown>
           <NavItem>
-            <NavLink href="/find-a-dealer/"><i className="fas fa-map-marker-alt"></i> Find a Dealer</NavLink>
+            <NavLink href="/find-a-dealer"><i className="fas fa-map-marker-alt"></i> Find a Dealer</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/build-and-price/"><i className="fas fa-cogs"></i> Build & Price</NavLink>
+            <NavLink href="/build-and-price"><i className="fas fa-cogs"></i> Build & Price</NavLink>
           </NavItem>
 
         </Nav>

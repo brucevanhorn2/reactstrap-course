@@ -8,13 +8,8 @@ class Home extends React.Component {
         super(props);
     }
 
-    render() {
-        return (
-            <div>
-                <SiteCarousel data={this.props.data} />
-                <VehicleBrowser data={this.props.data} />
-            </div>
-        );
+    render(){
+        return(<h3>Home</h3>);
     }
 }
 

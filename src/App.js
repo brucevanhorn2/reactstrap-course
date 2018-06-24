@@ -3,6 +3,9 @@ import './App.css';
 import TopNav from './components/TopNav';
 import Home from './components/Home';
 import VehicleDetail from './components/VehicleDetail';
+import BuildAndPrice from './components/BuildAndPrice';
+import DealerLocator from './components/DealerLocator';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const VehicleData = [
   {
@@ -59,38 +62,23 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.navClickHandler = this.navClickHandler.bind(this);
-    this.state = { selected: '' }
   }
 
-  navClickHandler(event) {
-    const selected = event.target.attributes['data-detailKey'].value;
-    console.log("You picked " + selected);
-    this.setState({selected: selected});
-  }
 
   render() {
-    const vehicleData = VehicleData.filter(vehicle => vehicle.detailKey === this.state.selected);
+    //const vehicleData = VehicleData.filter(vehicle => vehicle.detailKey === this.state.selected);
 
-    switch (this.state.view) {
-      case "jumper":
-        return (<div>
-          <VehicleDetail data={VehicleData}/>
-        </div>);
-        break;
-
-      default:
-        return (
-          <div className="App">
-            <TopNav
-              data={VehicleData}
-              navClickHandler={this.navClickHandler} />
-            <Home data={VehicleData} />
-          </div>
-        );
-        break;
-    }
-
+    return (
+      <Router>
+        <div className="App">
+          <TopNav data={VehicleData} />
+          <Route exact path='/' component={Home} />
+          <Route path='/detail/:selectedVehicle' component={VehicleDetail} />
+          <Route path='/find-a-dealer' component={DealerLocator} />
+          <Route path='/build-and-price' component={BuildAndPrice} />
+        </div>
+      </Router>
+    );
   }
 }
 

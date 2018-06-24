@@ -53,9 +53,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TopNav />
-        <SiteCarousel />
-        <VehicleBrowser />
+        <TopNav data={VehicleData} />
+        <SiteCarousel data={VehicleData} />
+        <VehicleBrowser data={VehicleData} />
       </div>
     );
   }

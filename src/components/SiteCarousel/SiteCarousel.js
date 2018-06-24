@@ -6,32 +6,8 @@ import {
     CarouselItem,
     CarouselControl,
     CarouselIndicators,
-    CarouselCaption,
-    Collapse } from 'reactstrap';
+    CarouselCaption } from 'reactstrap';
 
-    const items = [
-      {
-        src: '/images/carousel/jumper-01.png',
-        altText: '2018 Jumper J-1',
-        caption: '2018 Jumper J-1'
-      },
-      {
-        src: '/images/carousel/air-bike-01.png',
-        altText: '2018 AirBike',
-        caption: '2018 AirBike'
-      },
-      {
-        src: '/images/carousel/spidi-01.png',
-        altText: '2018 Spidi - Your Ultimate Getaway Car',
-        caption: '2018 Spidi'
-      },
-      {
-        src: '/images/carousel/mercury-01.png',
-        altText: 'Mercury Spacefaring Commercial Transport',
-        caption: 'Mercurty Spacefaring Commercial Transport'
-      }
-    ];
-  
 class SiteCarousel extends React.Component{
     constructor(props){
         super(props);
@@ -57,13 +33,13 @@ class SiteCarousel extends React.Component{
     
       next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === this.props.data.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
       }
     
       previous() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+        const nextIndex = this.state.activeIndex === 0 ? this.props.data.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
       }
     
@@ -74,14 +50,14 @@ class SiteCarousel extends React.Component{
 
       render(){
         const { activeIndex } = this.state;
-        const slides = items.map((item) => {
+        const slides = this.props.data.map((item) => {
         return (
           <CarouselItem
             onExiting={this.onExiting}
             onExited={this.onExited}
-            key={item.src}
+            key={item.carouselImage}
           >
-            <img src={item.src} alt={item.altText} />
+            <img src={item.carouselImage} alt={item.altText} />
             <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
           </CarouselItem>
         );
@@ -92,7 +68,7 @@ class SiteCarousel extends React.Component{
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators items={this.props.data} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />

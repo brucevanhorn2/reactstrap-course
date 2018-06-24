@@ -15,7 +15,7 @@ const VehicleData = [
     altText: '2018 Jumper J-1',
     caption: '2018 Jumper J-1',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper quam eu velit commodo sagittis. Nam at massa finibus, placerat nulla ac, aliquam mauris. Aenean a libero id odio molestie consectetur id vitae felis. Curabitur vitae lectus consequat, vestibulum orci ut, pulvinar dui. Curabitur cursus cursus tortor gravida tempus. Phasellus eget sagittis lorem. Integer elementum, diam vel sagittis tincidunt, arcu velit sollicitudin mi, eu molestie purus nisl in nulla. Fusce volutpat metus ut metus rhoncus aliquam.',
-    detailUrl: '/jumper/',
+    detailKey: 'jumper',
     msrp: 36000
   }, {
     model: "Spidi GT",
@@ -27,7 +27,7 @@ const VehicleData = [
     altText: '2018 Spidi - Your Ultimate Getaway Car',
     caption: '2018 Spidi',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper quam eu velit commodo sagittis. Nam at massa finibus, placerat nulla ac, aliquam mauris. Aenean a libero id odio molestie consectetur id vitae felis. Curabitur vitae lectus consequat, vestibulum orci ut, pulvinar dui. Curabitur cursus cursus tortor gravida tempus. Phasellus eget sagittis lorem. Integer elementum, diam vel sagittis tincidunt, arcu velit sollicitudin mi, eu molestie purus nisl in nulla. Fusce volutpat metus ut metus rhoncus aliquam.',
-    detailUrl: '/spidi/',
+    detailKey: 'spidi',
     msrp: 42000
   }, {
     model: "AirBike",
@@ -39,7 +39,7 @@ const VehicleData = [
     altText: '2018 AirBike',
     caption: '2018 AirBike',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper quam eu velit commodo sagittis. Nam at massa finibus, placerat nulla ac, aliquam mauris. Aenean a libero id odio molestie consectetur id vitae felis. Curabitur vitae lectus consequat, vestibulum orci ut, pulvinar dui. Curabitur cursus cursus tortor gravida tempus. Phasellus eget sagittis lorem. Integer elementum, diam vel sagittis tincidunt, arcu velit sollicitudin mi, eu molestie purus nisl in nulla. Fusce volutpat metus ut metus rhoncus aliquam.',
-    detailUrl: '/air-bike/',
+    detailKey: 'air-bike',
     msrp: 18500
   }, {
     model: "Mercury",
@@ -51,7 +51,7 @@ const VehicleData = [
     altText: 'Mercury Spacefaring Commercial Transport',
     caption: 'Mercurty Spacefaring Commercial Transport',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper quam eu velit commodo sagittis. Nam at massa finibus, placerat nulla ac, aliquam mauris. Aenean a libero id odio molestie consectetur id vitae felis. Curabitur vitae lectus consequat, vestibulum orci ut, pulvinar dui. Curabitur cursus cursus tortor gravida tempus. Phasellus eget sagittis lorem. Integer elementum, diam vel sagittis tincidunt, arcu velit sollicitudin mi, eu molestie purus nisl in nulla. Fusce volutpat metus ut metus rhoncus aliquam.',
-    detailUrl: '/mercury/',
+    detailKey: 'mercury',
     msrp: 167000
   }
 ]
@@ -60,15 +60,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.navClickHandler = this.navClickHandler.bind(this);
-    this.state = { view: "home" }
+    this.state = { selected: '' }
   }
 
   navClickHandler(event) {
-    debugger;
-    console.log(event);
+    const selected = event.target.attributes['data-detailKey'].value;
+    console.log("You picked " + selected);
+    this.setState({selected: selected});
   }
 
   render() {
+    const vehicleData = VehicleData.filter(vehicle => vehicle.detailKey === this.state.selected);
+
     switch (this.state.view) {
       case "jumper":
         return (<div>

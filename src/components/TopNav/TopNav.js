@@ -28,12 +28,14 @@ class TopNav extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
+    debugger;
     const VehicleSelections = this.props.data.map((item) => {
-      return <DropdownItem tag="a" href={ item.detailUrl }>
+      return <DropdownItem onClick = {this.props.navClickHandler}>
         { item.model }
         </DropdownItem>
-    });
+    }, this);
 
     return (<Navbar color="light" light expand="md">
       <NavbarBrand className="Branding" href="/">flying car dealership</NavbarBrand>
@@ -42,7 +44,7 @@ class TopNav extends React.Component {
         <Nav className="ml-auto" navbar>
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>
-              <i class="fas fa-space-shuttle"></i> Select a Vehicle
+              <i className="fas fa-space-shuttle"></i> Select a Vehicle
               </DropdownToggle>
             <DropdownMenu>
               {VehicleSelections}

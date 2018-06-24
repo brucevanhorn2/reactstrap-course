@@ -13,6 +13,7 @@ const VehicleData = [
     altText: '2018 Jumper J-1',
     caption: '2018 Jumper J-1',
     description: '',
+    detailUrl: '/jumper/',
     msrp: 36000
   },{
     model:  "Spidi GT",
@@ -22,6 +23,7 @@ const VehicleData = [
     altText: '2018 Spidi - Your Ultimate Getaway Car',
     caption: '2018 Spidi',
     description: '',
+    detailUrl: '/spidi/',
     msrp: 42000
   },{
     model:  "AirBike",
@@ -31,6 +33,7 @@ const VehicleData = [
     altText: '2018 AirBike',
     caption: '2018 AirBike',
     description: '',
+    detailUrl: '/airbike/',
     msrp: 18500
   },{
     model:  "Mercury",
@@ -40,6 +43,7 @@ const VehicleData = [
     altText: 'Mercury Spacefaring Commercial Transport',
     caption: 'Mercurty Spacefaring Commercial Transport',
     description: '',
+    detailUrl: '/mercury/',
     msrp: 167000
   }
 ]

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TopNav from './components/TopNav';
 import Home from './components/Home';
+import Footer from './components/Footer';
 import VehicleDetail from './components/VehicleDetail';
 import BuildAndPrice from './components/BuildAndPrice';
 import DealerLocator from './components/DealerLocator';
@@ -72,10 +73,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <TopNav data={VehicleData} />
-          <Route exact path='/' component={Home} />
-          <Route path='/detail/:selectedVehicle' component={VehicleDetail} />
-          <Route path='/find-a-dealer' component={DealerLocator} />
-          <Route path='/build-and-price' component={BuildAndPrice} />
+          <div className="contentArea">
+            <Route exact path='/' component={Home} />
+            <Route path='/detail/:selectedVehicle' component={VehicleDetail} />
+            <Route path='/find-a-dealer' component={DealerLocator} />
+            <Route path='/build-and-price' component={BuildAndPrice} />
+          </div>
+          <Footer />
         </div>
       </Router>
     );

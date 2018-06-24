@@ -25,4 +25,6 @@ p, h1, h2, h3, h4 {
   font-size: large;
 }
 
-
+.contentArea{
+  min-height: calc(100vh - 70px);
+}

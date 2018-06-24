@@ -13,13 +13,14 @@ import {
   DropdownItem
 } from 'reactstrap';
 
+import { Link } from 'react-router-dom';
+
 class TopNav extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false,
-      activeIndex: 0
+      isOpen: false
     };
   }
 
@@ -33,9 +34,11 @@ class TopNav extends React.Component {
     const VehicleSelections = this.props.data.map((item) => {
       return <DropdownItem
                 key={item.detailKey}
-                data-detailKey = {item.detailKey}
-                onClick = {this.props.navClickHandler}>
-        { item.model }
+                >
+        <Link to={{
+          pathname: "/detail/" + item.detailKey,
+          state: {vehicleData: this.props.data}
+        }}>{ item.model }</Link>
         </DropdownItem>
     }, this);
 

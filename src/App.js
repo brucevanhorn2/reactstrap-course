@@ -52,7 +52,7 @@ const VehicleData = [
     colors: ['White Dwarf'],
     carouselImage: '/images/carousel/mercury-01.png',
     altText: 'Mercury Spacefaring Commercial Transport',
-    caption: 'Mercurty Spacefaring Commercial Transport',
+    caption: 'Mercury Spacefaring Commercial Transport',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper quam eu velit commodo sagittis. Nam at massa finibus, placerat nulla ac, aliquam mauris. Aenean a libero id odio molestie consectetur id vitae felis. Curabitur vitae lectus consequat, vestibulum orci ut, pulvinar dui. Curabitur cursus cursus tortor gravida tempus. Phasellus eget sagittis lorem. Integer elementum, diam vel sagittis tincidunt, arcu velit sollicitudin mi, eu molestie purus nisl in nulla. Fusce volutpat metus ut metus rhoncus aliquam.',
     detailKey: 'mercury',
     msrp: 167000

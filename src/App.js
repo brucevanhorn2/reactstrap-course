@@ -15,10 +15,11 @@ class App extends Component {
   }
 
   render() {
+    console.log(window.data);
     return (
       <Router>
         <div className="App">
-         
+         <TopNav />
           <div className="contentArea">
             <Route exact path='/' component={Home} />
             <Route path='/detail/:selectedVehicle' component={VehicleDetail} />

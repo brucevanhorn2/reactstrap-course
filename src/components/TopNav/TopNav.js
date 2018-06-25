@@ -36,8 +36,7 @@ class TopNav extends React.Component {
                 key={item.detailKey}
                 >
         <Link to={{
-          pathname: "/detail/" + item.detailKey,
-          state: {vehicleData: window.data}
+          pathname: "/detail/" + item.detailKey
         }}>{ item.model }</Link>
         </DropdownItem>
     }, this);

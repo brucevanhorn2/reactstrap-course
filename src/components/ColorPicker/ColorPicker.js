@@ -6,6 +6,9 @@ class ColorPicker extends React.Component{
     }
 
     render(){
+        const colorChips = this.props.colors.map((color)=>{
+            return <div className="colorChip" style={{backgroundColor: color.color}} id={color.color}></div>;
+        });
         return(<h2>Color Picker</h2>);
     }
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import './Home.css';
-import data from '../../VehicleData.json'
 import SiteCarousel from '../SiteCarousel';
-
-//import VehicleBrowser from '../VehicleBrowser';
+import VehicleBrowser from '../VehicleBrowser';
 
 class Home extends React.Component {
     constructor(props) {
@@ -14,6 +12,7 @@ class Home extends React.Component {
         return (
             <div>
                 <SiteCarousel />
+                <VehicleBrowser />
             </div>);
     }
 }

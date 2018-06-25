@@ -33,7 +33,7 @@ class SiteCarousel extends React.Component{
     
       next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === this.props.data.length - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === window.data.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
       }
     
@@ -47,33 +47,35 @@ class SiteCarousel extends React.Component{
         if (this.animating) return;
         this.setState({ activeIndex: newIndex });
       }
-
       render(){
-        const { activeIndex } = this.state;
-        const slides = this.props.data.map((item) => {
-        return (
-          <CarouselItem
-            onExiting={this.onExiting}
-            onExited={this.onExited}
-            key={item.carouselImage}
-          >
-            <img src={item.carouselImage} alt={item.altText} />
-            <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-          </CarouselItem>
-        );
-      });
-
-      return(<Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        <CarouselIndicators items={this.props.data} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-      </Carousel>);
+        return(<h1>Carousel</h1>);
       }
+      // render(){
+      //   const { activeIndex } = this.state;
+      //   const slides = data.vehicleData.map((item) => {
+      //   return (
+      //     <CarouselItem
+      //       onExiting={this.onExiting}
+      //       onExited={this.onExited}
+      //       key={item.carouselImage}
+      //     >
+      //       <img src={item.carouselImage} alt={item.altText} />
+      //       <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+      //     </CarouselItem>
+      //   );
+      // });
+
+      // return(<Carousel
+      //   activeIndex={activeIndex}
+      //   next={this.next}
+      //   previous={this.previous}
+      // >
+      //   <CarouselIndicators items={this.props.data} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+      //   {slides}
+      //   <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+      //   <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+      // </Carousel>);
+      // }
 }
 
 export default SiteCarousel;

@@ -31,13 +31,13 @@ class TopNav extends React.Component {
   }
 
   render() {
-    const VehicleSelections = this.props.data.map((item) => {
+    const VehicleSelections = window.data.map((item) => {
       return <DropdownItem
                 key={item.detailKey}
                 >
         <Link to={{
           pathname: "/detail/" + item.detailKey,
-          state: {vehicleData: this.props.data}
+          state: {vehicleData: window.data}
         }}>{ item.model }</Link>
         </DropdownItem>
     }, this);

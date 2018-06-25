@@ -1,4 +1,5 @@
 import React from 'react';
+import Numeral from "numeral";
 import {
     Container, Row, Col, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, NavLink
@@ -17,7 +18,7 @@ class VehicleBrowser extends React.Component {
                     <CardBody>
                         <CardTitle>{item.year} {item.model}</CardTitle>
                         <CardSubtitle>{item.taglline}</CardSubtitle>
-                        <CardText>{item.description}</CardText>
+                        <CardText>Starting at ${item.msrp}</CardText>
                         <NavLink href={"/detail/" + item.detailKey}>Details</NavLink>
                         <NavLink href="/build-and-price">Build & Price</NavLink>
                         <NavLink href="/find-a-dealer">Dealers Near You</NavLink>

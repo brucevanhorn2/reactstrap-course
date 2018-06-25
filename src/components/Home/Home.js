@@ -12,7 +12,7 @@ class Home extends React.Component {
         return (
             <div>
                 <SiteCarousel />
-                <VehicleBrowser />
+                <VehicleBrowser /> 
             </div>);
     }
 }

@@ -20,7 +20,15 @@ class VehicleDetail extends React.Component {
             <Row>
                 <Col>
                     <p>This is the vehicle detail screen for {this.state.selectedVehicle}</p>
-                    <p>{selectedVehicleData.caption}</p></Col></Row></div>
+                    <p>{selectedVehicleData.caption}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={12} md={{size: 6, offset:3}}>
+                    <p>{selectedVehicleData.description}</p>
+                </Col>
+            </Row>
+        </div>
         )
     }
 }

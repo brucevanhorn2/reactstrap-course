@@ -47,7 +47,7 @@ class DealerLocator extends React.Component {
 
     onListClick(eventData){
         eventData.preventDefault();
-        console.log(eventData.target.text);
+        //console.log(eventData.target.text);
         const stateClicked = eventData.target.text.split(" ")[0];
         this.setState({searchTerm: stateClicked});
     }
@@ -80,7 +80,7 @@ class DealerLocator extends React.Component {
         </div>;
 
         if (this.state.searchTerm.length < 4) {
-            console.log(filteredStubData);
+            //console.log(filteredStubData);
             return (
                 <div>
                     {searchBar}

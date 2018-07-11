@@ -10,7 +10,9 @@ import {
     ListGroupItem,
     Badge,
     Table,
-    Button
+    Button,
+    InputGroup,
+    InputGroupAddon
 } from 'reactstrap';
 
 class DealerLocator extends React.Component {
@@ -18,6 +20,7 @@ class DealerLocator extends React.Component {
         super(props);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.state = { searchTerm: "", resultsToggle: false }
+        this.onClearClicked = this.onClearClicked.bind(this);
         this.stubData = [
             {
                 dealershipName: 'Slick Willy\'s Flying Cars',
@@ -37,6 +40,10 @@ class DealerLocator extends React.Component {
 
         ]
     }
+    onClearClicked(eventData){
+        eventData.preventDefault();
+        this.setState({searchTerm: ''});
+    }
 
     handleInputChange(eventData) {
         //console.log("You typed in " + eventData.target.value);
@@ -49,7 +56,16 @@ class DealerLocator extends React.Component {
                 <Col sm={12} md={{ size: 6, offset: 3 }}>
                     <Form>
                         <FormGroup>
-                            <Input onChange={this.handleInputChange} type="text" name="user_address" placeholder="We're probably nearby.  Type your address." />
+                            <InputGroup>
+                                <Input onChange={this.handleInputChange} 
+                                       type="text" 
+                                       value={this.state.searchTerm} 
+                                       name="user_address" 
+                                       placeholder="We're probably nearby.  Type your address." />
+                                <InputGroupAddon addonType="append">
+                                    <Button onClick={this.onClearClicked}>X</Button>
+                                </InputGroupAddon>
+                            </InputGroup>
                         </FormGroup>
                     </Form>
                 </Col>

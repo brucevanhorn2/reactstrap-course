@@ -20,6 +20,7 @@ class DealerLocator extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.state = { searchTerm: "", resultsToggle: false }
         this.onClearClicked = this.onClearClicked.bind(this);
+        this.onListClick = this.onListClick.bind(this);
         this.stubData = [
             {
                 dealershipName: 'Slick Willy\'s Flying Cars',
@@ -44,6 +45,12 @@ class DealerLocator extends React.Component {
         this.setState({searchTerm: ''});
     }
 
+    onListClick(eventData){
+        eventData.preventDefault();
+        console.log(eventData.target.text);
+        const stateClicked = eventData.target.text.split(" ")[0];
+        this.setState({searchTerm: stateClicked});
+    }
     handleInputChange(eventData) {
         //console.log("You typed in " + eventData.target.value);
         this.setState({ searchTerm: eventData.target.value });
@@ -80,14 +87,14 @@ class DealerLocator extends React.Component {
                     <Row>
                         <Col sm="12" md={{ size: 10, offset: 1 }}>
                             <ListGroup>
-                                <ListGroupItem className="justify-content-between">Alabama <Badge pill>14</Badge></ListGroupItem>
-                                <ListGroupItem className="justify-content-between">Arkansas <Badge pill>12</Badge></ListGroupItem>
-                                <ListGroupItem className="justify-content-between">California <Badge pill>31</Badge></ListGroupItem>
-                                <ListGroupItem className="justify-content-between">Florida <Badge pill>12</Badge></ListGroupItem>
-                                <ListGroupItem className="justify-content-between">Georgia <Badge pill>12</Badge></ListGroupItem>
-                                <ListGroupItem className="justify-content-between">Louisiana <Badge pill>11</Badge></ListGroupItem>
-                                <ListGroupItem className="justify-content-between">Oklahoma <Badge pill>19</Badge></ListGroupItem>
-                                <ListGroupItem className="justify-content-between">Texas <Badge pill>70</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">Alabama <Badge pill>14</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">Arkansas <Badge pill>12</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">California <Badge pill>31</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">Florida <Badge pill>12</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">Georgia <Badge pill>12</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">Louisiana <Badge pill>11</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">Oklahoma <Badge pill>19</Badge></ListGroupItem>
+                                <ListGroupItem tag="a" href="#" onClick={this.onListClick} className="justify-content-between">Texas <Badge pill>70</Badge></ListGroupItem>
                             </ListGroup>
                         </Col>
                     </Row>

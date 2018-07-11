@@ -9,14 +9,15 @@ import {
     ListGroup,
     ListGroupItem,
     Badge,
-    Table
+    Table, 
+    Button
 } from 'reactstrap';
 
 class DealerLocator extends React.Component {
     constructor(props) {
         super(props);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.state = { searchTerm: "" }
+        this.state = { searchTerm: "", resultsToggle: false }
     }
 
     handleInputChange(eventData) {
@@ -25,18 +26,22 @@ class DealerLocator extends React.Component {
     }
 
     render() {
+        let searchBar = <div><h1>Over 100 Authorized Dealers Nationwide</h1>
+            <Row>
+                <Col sm={12} md={{ size: 6, offset: 3 }}>
+                    <Form>
+                        <FormGroup>
+                            <Input onChange={this.handleInputChange} type="text" name="user_address" placeholder="We're probably nearby.  Type your address." />
+                        </FormGroup>
+                    </Form>
+                </Col>
+            </Row>
+            </div>;
+            
+        if(this.state.searchTerm.length < 4){
         return (
             <div>
-                <h1>Over 100 Authorized Dealers Nationwide</h1>
-                <Row>
-                    <Col sm={12} md={{ size: 6, offset: 3 }}>
-                        <Form>
-                            <FormGroup>
-                                <Input onChange={this.handleInputChange} type="text" name="user_address" placeholder="We're probably nearby.  Type your address." />
-                            </FormGroup>
-                        </Form>
-                    </Col>
-                </Row>
+                { searchBar }
                 <Row>
                     <Col sm="12" md={{ size: 10, offset: 1 }}>
                         <ListGroup>
@@ -51,6 +56,11 @@ class DealerLocator extends React.Component {
                         </ListGroup>
                     </Col>
                 </Row>
+                </div>
+                )} else {
+                    return(
+                        <div>
+                            { searchBar }
                 <Row>
                     <Col sm="12" md={{ size: 10, offset: 1 }}>
                         <Table>
@@ -85,9 +95,9 @@ class DealerLocator extends React.Component {
                         </Table>
                     </Col>
                 </Row>
-            </div>
+                </div>
         );
     }
 }
-
+}
 export default DealerLocator;

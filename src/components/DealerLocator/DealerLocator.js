@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Row,
     Col,
-    Media,
     Form,
     FormGroup,
     Input,
@@ -24,17 +23,17 @@ class DealerLocator extends React.Component {
         this.stubData = [
             {
                 dealershipName: 'Slick Willy\'s Flying Cars',
-                address: '555 Nearby St. YourState, 75001',
+                address: '555 Nearby St.  Ada, Oklahoma 74820',
                 phone: '1-800-fly-cars'
             },
             {
                 dealershipName: 'Dewey, Cheatham, &amp; Howe Auto Sales',
-                address: '123 Test St.  YourState, 75001',
+                address: '123 Test St. Dallas Texas, 75001',
                 phone: '1-800-pay-here'
             },
             {
                 dealershipName: 'Ima Crooke Flying Car Sales',
-                address: '234 Booyah Ln. YourState, 75001',
+                address: '234 Booyah Ln. San Mateo California, 75001',
                 phone: '1-888-fak-enum'
             },
 
@@ -51,6 +50,7 @@ class DealerLocator extends React.Component {
     }
 
     render() {
+        const filteredStubData = this.stubData.filter(d => d.address.includes(this.state.searchTerm));
         let searchBar = <div><h1>Over 100 Authorized Dealers Nationwide</h1>
             <Row>
                 <Col sm={12} md={{ size: 6, offset: 3 }}>
@@ -61,7 +61,7 @@ class DealerLocator extends React.Component {
                                        type="text" 
                                        value={this.state.searchTerm} 
                                        name="user_address" 
-                                       placeholder="We're probably nearby.  Type your address." />
+                                       placeholder="We're probably nearby.  What state are you in?" />
                                 <InputGroupAddon addonType="append">
                                     <Button onClick={this.onClearClicked}>X</Button>
                                 </InputGroupAddon>
@@ -73,6 +73,7 @@ class DealerLocator extends React.Component {
         </div>;
 
         if (this.state.searchTerm.length < 4) {
+            console.log(filteredStubData);
             return (
                 <div>
                     {searchBar}
@@ -108,7 +109,7 @@ class DealerLocator extends React.Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.stubData.map(function (item, i) {
+                                    {filteredStubData.map(function (item, i) {
                                         return (<tr key={item.phone}>
                                             <td>{String(i)}</td>
                                             <td>{item.dealershipName}</td>

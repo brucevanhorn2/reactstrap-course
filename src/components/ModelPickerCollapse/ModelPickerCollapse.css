@@ -1,0 +1,16 @@
+.vehicleTitle {
+    text-align: left !important;
+}
+
+.vehicleData {
+    text-align: left !important;
+}
+
+.vehicleImage {
+    margin-right: 20px;
+}
+
+.clickableMedia {
+    cursor: pointer;
+    padding: 30px;
+}

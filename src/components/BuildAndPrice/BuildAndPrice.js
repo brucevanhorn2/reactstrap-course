@@ -1,6 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 import './BuildAndPrice.css';
+import ColorPicker from '../ColorPicker/ColorPicker';
+import ModelPicker from '../ModelPicker/ModelPicker';
 import {
     TabContent,
     TabPane,
@@ -67,14 +69,14 @@ class BuildAndPrice extends React.Component {
                     <TabPane tabId="1">
                         <Row>
                             <Col sm="12">
-                                <h4>Tab 1 Contents</h4>
+                                <ModelPicker />
                             </Col>
                         </Row>
                     </TabPane>
                     <TabPane tabId="2">
                         <Row>
                             <Col sm="12">
-                                <h4>Tab 2 Contents</h4>
+                            color picker here
                             </Col>
                         </Row>
                     </TabPane>

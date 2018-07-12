@@ -30,24 +30,24 @@ class SiteCarousel extends React.Component{
       onExited() {
         this.animating = false;
       }
-    
+
       next() {
         if (this.animating) return;
         const nextIndex = this.state.activeIndex === window.data.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
       }
-    
+
       previous() {
         if (this.animating) return;
         const nextIndex = this.state.activeIndex === 0 ? this.props.data.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
       }
-    
+
       goToIndex(newIndex) {
         if (this.animating) return;
         this.setState({ activeIndex: newIndex });
       }
-      
+
       render(){
         const { activeIndex } = this.state;
         const slides = window.data.map((item) => {

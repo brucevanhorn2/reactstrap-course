@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import './BuildAndPrice.css';
 import {
     TabContent,
     TabPane,
@@ -28,7 +29,7 @@ class BuildAndPrice extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="tabPanel">
                 <h3>Build and Price</h3>
                 <Nav tabs>
                     <NavItem>

@@ -14,6 +14,8 @@ import {
     Row,
     Col
 } from 'reactstrap';
+
+
 class BuildAndPrice extends React.Component {
     constructor(props) {
         super(props);

@@ -14,3 +14,9 @@
     cursor: pointer;
     padding: 30px;
 }
+
+.vehicleSummary{
+    margin: 20px;
+    padding: 8px;
+    border: silver 1px solid;
+}

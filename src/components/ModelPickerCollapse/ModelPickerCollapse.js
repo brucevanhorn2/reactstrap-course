@@ -54,7 +54,7 @@ class ModelPickerCollapse extends React.Component {
                                             <NavLink onClick={this.toggle}>{this.state.collapse ? "See Less": "See More"}</NavLink>
                                         </NavItem>
                                         <NavItem>
-                                            <NavLink>Select</NavLink>
+                                            <NavLink data-model={vehicle.detailKey} onClick={this.props.selectVehicle}>Select</NavLink>
                                         </NavItem>
                                     </Nav>
                                 </Media>

@@ -2,10 +2,6 @@ import React from 'react';
 import './ModelPicker.css'
 import ModelPickerCollapse from '../ModelPickerCollapse/ModelPickerCollapse';
 import {
-    Collapse,
-    Button,
-    Card,
-    CardBody,
     Row,
     Col
 } from 'reactstrap';
@@ -19,7 +15,7 @@ class ModelPicker extends React.Component {
             <div>
                 <Row>
                     <Col sm="12">
-                        <ModelPickerCollapse />
+                        <ModelPickerCollapse selectVehicle={this.props.selectVehicle} />
                     </Col>
                 </Row>
             </div>

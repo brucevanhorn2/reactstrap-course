@@ -9,10 +9,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Card,
-    Button,
-    CardTitle,
-    CardText,
     Row,
     Col
 } from 'reactstrap';
@@ -22,9 +18,43 @@ class BuildAndPrice extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
+        this.selectVehicle = this.selectVehicle.bind(this);
+        this.selectColor = this.selectColor.bind(this);
+        this.selectEngine = this.selectEngine.bind(this);
+        this.selectOptions = this.selectOptions.bind(this);
         this.state = {
-            activeTab: '1'
+            activeTab: '1',
+            selectedVehicle: "",
+            selectedColor: 0,
+            selectedEngine: 0,
+            selectedOptions: []
         };
+    }
+
+    selectVehicle(eventData){
+        //console.log(eventData.target.getAttribute('data-model'));
+        this.setState({
+            activeTab: '2',
+            selectedVehicle: eventData.target.getAttribute('data-model')
+        });
+    }
+
+    selectColor(eventData){
+        this.setState({
+            activeTab: '3',
+            selectedColor: eventData.target.getAttribute('data-color')
+        });
+    }
+
+    selectEngine(eventData){
+        this.setState({
+            activeTab: '4',
+            selectedEngine: eventData.target.getAttribute('data-engine')
+        })
+    }
+
+    selectOptions(eventData){
+        //show modal with all the options
     }
     toggle(tab) {
         if (tab !== this.state.activeTab) {
@@ -69,7 +99,7 @@ class BuildAndPrice extends React.Component {
                     <TabPane tabId="1">
                         <Row>
                             <Col sm="12">
-                                <ModelPicker />
+                                <ModelPicker selectVehicle={this.selectVehicle} />
                             </Col>
                         </Row>
                     </TabPane>

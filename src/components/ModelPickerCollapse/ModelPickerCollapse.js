@@ -21,10 +21,6 @@ class ModelPickerCollapse extends React.Component {
         this.state = { collapse: false };
     }
 
-    onSelectVehicle(eventData) {
-        console.log(eventData.target);
-    }
-
     toggle() {
         this.setState({ collapse: !this.state.collapse });
     }

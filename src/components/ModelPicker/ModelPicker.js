@@ -15,7 +15,8 @@ class ModelPicker extends React.Component {
             <div>
                 <Row>
                     <Col sm="12">
-                        <ModelPickerCollapse selectVehicle={this.props.selectVehicle} />
+                        <ModelPickerCollapse
+                            selectVehicle={this.props.selectVehicle} />
                     </Col>
                 </Row>
             </div>

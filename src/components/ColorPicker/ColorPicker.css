@@ -1,3 +1,9 @@
+.colorBox{
+    width: 100%;
+    min-height: 150px;
+    border: solid 1px silver;
+    margin: 8px;
+}
 .colorChip{
     width:  128px;
     height: 128px;

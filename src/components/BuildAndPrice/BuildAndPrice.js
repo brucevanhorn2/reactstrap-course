@@ -106,7 +106,9 @@ class BuildAndPrice extends React.Component {
                     <TabPane tabId="2">
                         <Row>
                             <Col sm="12">
-                            <ColorPicker selectedVehicle={this.state.selectedVehicle} />
+                            <ColorPicker
+                                selectColor = {this.selectColor}
+                                selectedVehicle = {this.state.selectedVehicle} />
                             </Col>
                         </Row>
                     </TabPane>

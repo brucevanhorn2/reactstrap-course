@@ -7,8 +7,13 @@ import {
     Card,
     CardBody,
     Row,
-    Col
+    Col,
+    Nav,
+    NavItem,
+    NavLink
 } from 'reactstrap';
+import Numeral from 'numeral';
+
 class ModelPickerCollapse extends React.Component {
     constructor(props) {
         super(props);
@@ -16,41 +21,55 @@ class ModelPickerCollapse extends React.Component {
         this.state = { collapse: false };
     }
 
+    onSelectVehicle(eventData) {
+        console.log(eventData.target);
+    }
+
     toggle() {
         this.setState({ collapse: !this.state.collapse });
     }
 
     render() {
-        return (<div className="clickableMedia" onClick={this.toggle}>
+        return (<div className="clickableMedia">
             {window.data.map(
-                function () {
+                function (vehicle, i) {
                     return (
-                        <div className="vehicleSummary">
+                        <div className="vehicleSummary" key={"model-picker-" + vehicle.detailKey}>
                             <Media>
                                 <Media left href="#">
-                                    <Media className="vehicleImage" src="/images/thumbnails/placeholder96.png" alt="Generic placeholder image" />
+                                    <Media className="vehicleImage" src={vehicle.thumbnail} alt="Generic placeholder image" />
                                 </Media>
                                 <Media body className="vehicleData">
                                     <Media heading className="vehicleTitle">
-                                        Media heading
+                                        {vehicle.model}
                                     </Media>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    <div>
+                                        {vehicle.tagline} <br /><br />
+                                        <span>Starting at {Numeral(vehicle.msrp).format('$0,0')}</span><br />
+                                        <span>{Numeral((vehicle.msrp) / 48).format('$0,0')} per month for 48 months</span><br />
+                                        <span><i className="fas fa-gas-pump"></i> {vehicle.options.engines[0].nmpg} NMPG</span>
+                                    </div>
+                                    <Nav>
+                                        <NavItem>
+                                            <NavLink onClick={this.toggle}>{this.state.collapse ? "See Less": "See More"}</NavLink>
+                                        </NavItem>
+                                        <NavItem>
+                                            <NavLink>Select</NavLink>
+                                        </NavItem>
+                                    </Nav>
                                 </Media>
                             </Media>
                             <Collapse isOpen={this.state.collapse}>
                                 <Card>
                                     <CardBody>
-                                        Anim pariatur cliche reprehenderit,
-                                         enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                                         anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                         nesciunt sapiente ea proident.
+                                        {vehicle.description}
                                     </CardBody>
                                 </Card>
                             </Collapse>
                         </div>)
                 }
                 , this)}
-            );
+
         </div>
         );
     }

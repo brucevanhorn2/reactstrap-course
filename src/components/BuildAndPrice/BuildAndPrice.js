@@ -106,7 +106,7 @@ class BuildAndPrice extends React.Component {
                     <TabPane tabId="2">
                         <Row>
                             <Col sm="12">
-                            color picker here
+                            <ColorPicker />
                             </Col>
                         </Row>
                     </TabPane>

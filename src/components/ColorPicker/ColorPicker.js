@@ -1,15 +1,22 @@
 import React from 'react';
-
+import './ColorPicker.css';
 class ColorPicker extends React.Component{
     constructor(props){
         super(props);
     }
 
     render(){
-        const colorChips = this.props.colors.map((color)=>{
-            return <div className="colorChip" style={{backgroundColor: color.color}} id={color.color}></div>;
-        });
-        return(<h2>Color Picker</h2>);
+        //find the selected model
+        //const selectedVehicleData = window.data.filter((vehicle) => vehicle.detailKey === this.props.selectedVehicle)[0];
+        return(
+            <div>
+                <img className="colorChip" src="/images/thumbnails/placeholder96.png" />
+                <img className="colorChip" src="/images/thumbnails/placeholder96.png" />
+                <img className="colorChip" src="/images/thumbnails/placeholder96.png" />
+                <img className="colorChip" src="/images/thumbnails/placeholder96.png" />
+                <img className="colorChip" src="/images/thumbnails/placeholder96.png" />
+            </div>
+        );
     }
 }
 

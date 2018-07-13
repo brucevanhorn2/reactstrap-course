@@ -1,5 +1,6 @@
 .colorChip{
-    width:  48px;
-    height: 48px;
+    width:  128px;
+    height: 128px;
     border: solid 1px silver;
+    margin: 8px;
 }

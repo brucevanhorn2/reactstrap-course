@@ -13,7 +13,7 @@ class VehicleBrowser extends React.Component {
     render() {
         const VehicleSelections = window.data.map((item) => {
             return <Col key={item.detailKey}  md={ Math.ceil(12 / window.data.length) }>
-                <Card className={'VehicleBrowser'}>
+                <Card>
                     <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                     <CardBody>
                         <CardTitle>{item.year} {item.model}</CardTitle>
@@ -27,7 +27,7 @@ class VehicleBrowser extends React.Component {
             </Col>
         });
         return (
-            <div>
+            <div style={{marginTop: '40px'}}>
                 <Container>
                     <Row>
                         {VehicleSelections}

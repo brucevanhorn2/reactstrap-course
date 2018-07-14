@@ -57,8 +57,8 @@ class SiteCarousel extends React.Component{
             onExited={this.onExited}
             key={item.carouselImage}
           >
-            <img src={item.carouselImage} alt={item.altText} />
-            <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+            <img className={"carouselImage"} src={item.carouselImage} alt={item.altText} />
+            <CarouselCaption captionText="" captionHeader="" />
           </CarouselItem>
         );
       });

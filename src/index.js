@@ -79,7 +79,7 @@ window.data = [
     model: "Spidi GT",
     tagline: "Your Ultimate Getaway Car",
     modelYear: "2018",
-    thumbnail: "images/thumbnails/spidi/spidi-blue-thumbnails00.png",
+    thumbnail: "/images/thumbnails/spidi/spidi-blue-thumbnails00.png",
     colors: [
       [
         "White Dwarf",
@@ -233,7 +233,7 @@ window.data = [
     model: "Mercury",
     tagline: "Professional Grade Affordable Fleets.",
     modelYear: "2018",
-    thumbnail: "images/thumbnails/mercury/mercury-white-thumbnails00.png",
+    thumbnail: "/images/thumbnails/mercury/mercury-white-thumbnails00.png",
     colors: [
       [
         "White Dwarf",

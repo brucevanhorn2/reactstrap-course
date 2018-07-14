@@ -1,4 +1,5 @@
 import React from 'react';
+import './VehicleDetail.css';
 import { Row, Col, Media } from 'reactstrap';
 
 class VehicleDetail extends React.Component {
@@ -10,17 +11,16 @@ class VehicleDetail extends React.Component {
     render() {
         const { selectedVehicle } = this.props.match.params;
         const selectedVehicleData = window.data.filter((vehicle) => vehicle.detailKey === selectedVehicle)[0];
-
         return (<div>
             <Row>
                 <Col>
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=image&w=600&h=400" />
+                    <img className="detailImage" src={selectedVehicleData.thumbnail} />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <p>This is the vehicle detail screen for {this.state.selectedVehicle}</p>
-                    <p>{selectedVehicleData.caption}</p>
+                    <h1> {selectedVehicleData.model}</h1>
+                    <h2>{selectedVehicleData.tagline}</h2>
                 </Col>
             </Row>
             <Row>

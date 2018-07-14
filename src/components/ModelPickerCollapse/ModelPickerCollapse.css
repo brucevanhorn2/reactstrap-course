@@ -8,6 +8,8 @@
 
 .vehicleImage {
     margin-right: 20px;
+    width: 320px;
+    height: 240px;
 }
 
 .clickableMedia {

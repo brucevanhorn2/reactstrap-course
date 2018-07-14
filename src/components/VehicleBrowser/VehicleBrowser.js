@@ -12,9 +12,10 @@ class VehicleBrowser extends React.Component {
 
     render() {
         const VehicleSelections = window.data.map((item) => {
+            console.log(item.thumbnail);
             return <Col key={item.detailKey}  md={ Math.ceil(12 / window.data.length) }>
                 <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <CardImg top width="100%" src={item.thumbnail} alt="Card image cap" />
                     <CardBody>
                         <CardTitle>{item.year} {item.model}</CardTitle>
                         <CardSubtitle>{item.taglline}</CardSubtitle>
@@ -27,7 +28,7 @@ class VehicleBrowser extends React.Component {
             </Col>
         });
         return (
-            <div style={{marginTop: '40px'}}>
+            <div style={{marginTop: '40px', marginBottom: '40px'}}>
                 <Container>
                     <Row>
                         {VehicleSelections}

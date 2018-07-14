@@ -9,7 +9,7 @@ window.data = [
     model: "Jumper J-1",
     tagline: "Commuting Convenience",
     modelYear: "2018",
-    thumbnail: "/images/carousel/jumper-01-thumb.png",
+    thumbnail: "/images/thumbnails/jumper/jumper-red-thumbnails00.png",
     colors: [
       [
         "White Dwarf",
@@ -79,7 +79,7 @@ window.data = [
     model: "Spidi GT",
     tagline: "Your Ultimate Getaway Car",
     modelYear: "2018",
-    thumbnail: "/images/carousel/spidi-01-thumb.png",
+    thumbnail: "images/thumbnails/spidi/spidi-blue-thumbnails00.png",
     colors: [
       [
         "White Dwarf",
@@ -159,11 +159,11 @@ window.data = [
     model: "AirBike",
     tagline: "New Perspective on Fun",
     modelYear: "2018",
-    thumbnail: "/images/carousel/air-bike-01-thumb.png",
+    thumbnail: "/images/thumbnails/air-bike/air-bike-purple-thumbnails00.png",
     colors: [
       [
         "White Dwarf",
-        "/images/thumbnails/air-bike-white.png",
+        "/images/thumbnails/air-bike-purple-thumbnails00.png",
         "#ffffff"
       ],
       [
@@ -233,7 +233,7 @@ window.data = [
     model: "Mercury",
     tagline: "Professional Grade Affordable Fleets.",
     modelYear: "2018",
-    thumbnail: "/images/carousel/mercury-01-thumb.png",
+    thumbnail: "images/thumbnails/mercury/mercury-white-thumbnails00.png",
     colors: [
       [
         "White Dwarf",

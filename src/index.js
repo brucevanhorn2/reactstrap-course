@@ -13,12 +13,12 @@ window.data = [
     colors: [
       [
         "White Dwarf",
-        "/images/thumbnails/jumper-white.png",
+        "/images/thumbnails/jumper/jumper-white-thumbnails10.png",
         "#ffffff"
       ],
       [
         "Red Giant",
-        "/images/thumbnails/jumper-red.png",
+        "/images/thumbnails/jumper/jumper-red-thumbnails10.png",
         "#b22222"
       ]
     ],
@@ -82,23 +82,18 @@ window.data = [
     thumbnail: "/images/thumbnails/spidi/spidi-blue-thumbnails00.png",
     colors: [
       [
-        "White Dwarf",
-        "/images/thumbnails/spidi-white.png",
-        "#ffffff"
-      ],
-      [
         "Red Giant",
-        "/images/thumbnails/spidi-red.png",
+        "/images/thumbnails/spidi/spidi-red-thumbnails10.png",
         "#b22222"
       ],
       [
         "Main Sequence Blue",
-        "/images/thumbnails/-spidi-blue.png",
+        "/images/thumbnails/spidi/spidi-blue-thumbnails10.png",
         "#000080"
       ],
       [
         "Solar Yellow",
-        "/images/thumbnails/spidi-yellow.png",
+        "/images/thumbnails/spidi/spidi-yellow-thumbnails10.png",
         "#ffd700"
       ]
     ],

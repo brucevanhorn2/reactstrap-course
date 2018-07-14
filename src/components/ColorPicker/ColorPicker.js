@@ -19,7 +19,7 @@ class ColorPicker extends React.Component {
                                 alt={color[0]}
                                 onClick={this.props.selectColor}
                                 data-color={i}
-                                src={color[2]} />
+                                src={color[1]} />
                         }, this
                     )}
                 </div>

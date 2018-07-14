@@ -87,13 +87,7 @@ class BuildAndPrice extends React.Component {
                             Powerplant
                         </NavLink>
                     </NavItem>
-                    <NavItem>
-                        <NavLink
-                            className={classnames({ active: this.state.activeTab === '4' })}
-                            onClick={() => { this.toggle('4'); }}>
-                            Packages
-                        </NavLink>
-                    </NavItem>
+                    
                 </Nav>
                 <TabContent activeTab={this.state.activeTab}>
                     <TabPane tabId="1">
@@ -119,13 +113,7 @@ class BuildAndPrice extends React.Component {
                             </Col>
                         </Row>
                     </TabPane>
-                    <TabPane tabId="4">
-                        <Row>
-                            <Col sm="12">
-                                <h4>Tab 4 Contents</h4>
-                            </Col>
-                        </Row>
-                    </TabPane>
+                    
                 </TabContent>
 
             </div>);

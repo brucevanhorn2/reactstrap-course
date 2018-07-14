@@ -155,26 +155,27 @@ window.data = [
     tagline: "New Perspective on Fun",
     modelYear: "2018",
     thumbnail: "/images/thumbnails/air-bike/air-bike-purple-thumbnails00.png",
+    //black blue purple red gold
     colors: [
       [
-        "White Dwarf",
-        "/images/thumbnails/air-bike-purple-thumbnails00.png",
-        "#ffffff"
+        "Nebula Purple",
+        "/images/thumbnails/air-bike/air-bike-purple-thumbnails10.png",
+        "#6600cc"
       ],
       [
         "Red Giant",
-        "/images/thumbnails/air-bike-red.png",
+        "/images/thumbnails/air-bike/air-bike-red-thumbnails10.png",
         "#b22222"
       ],
       [
         "Black Hole",
-        "/images/thumbnails/air-bike-black.png",
+        "/images/thumbnails/air-bike/air-bike-black-thumbnails10.png",
         "#000000"
       ],
       [
-        "Chameleon Purple",
-        "/images/thumbnails/air-bike/purple.png",
-        "#663399"
+        "Solar Yellow",
+        "/images/thumbnails/air-bike/air-bike-yellow-thumbnails10.png",
+        "#ffcc00"
       ]
     ],
     carouselImage: "/images/carousel/air-bike-01.png",

@@ -15,7 +15,7 @@ class VehicleBrowser extends React.Component {
             console.log(item.thumbnail);
             return <Col key={item.detailKey}  md={ Math.ceil(12 / window.data.length) }>
                 <Card>
-                    <CardImg top width="100%" src={item.thumbnail} alt="Card image cap" />
+                    <CardImg top width="100%" src={item.thumbnail} alt={item.altText} />
                     <CardBody>
                         <CardTitle>{item.year} {item.model}</CardTitle>
                         <CardSubtitle>{item.taglline}</CardSubtitle>

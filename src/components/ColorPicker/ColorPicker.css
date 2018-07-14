@@ -5,8 +5,14 @@
     margin: 8px;
 }
 .colorChip{
-    width:  128px;
-    height: 128px;
+    width:  320px;
+    height: 240px;
     border: solid 1px silver;
     margin: 8px;
+    cursor: pointer;
+
+}
+
+.colorChip:hover {
+    border: solid 2px red;
 }

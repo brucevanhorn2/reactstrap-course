@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import './BuildAndPrice.css';
 import ColorPicker from '../ColorPicker/ColorPicker';
 import ModelPicker from '../ModelPicker/ModelPicker';
+import EnginePicker from '../EngineSelector/EngineSelector';
 import {
     TabContent,
     TabPane,
@@ -109,7 +110,7 @@ class BuildAndPrice extends React.Component {
                     <TabPane tabId="3">
                         <Row>
                             <Col sm="12">
-                                <h4>Tab 3 Contents</h4>
+                                <EnginePicker selectedVehicle = {this.state.selectedVehicle} />
                             </Col>
                         </Row>
                     </TabPane>

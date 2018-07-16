@@ -56,6 +56,16 @@ window.data = [
     thumbnail: "/images/thumbnails/spidi/spidi-blue-thumbnails00.png",
     colors: [
       [
+        "White Dwarf",
+        "/images/thumbnails/spidi/spidi-white-thumbnails10.png",
+        "white"
+      ],
+      [
+        "Black Hole",
+        "/images/thumbnails/spidi/spidi-black-thumbnails10.png",
+        "black"
+      ],
+      [
         "Red Giant",
         "/images/thumbnails/spidi/spidi-red-thumbnails10.png",
         "red"

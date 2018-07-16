@@ -14,5 +14,9 @@
 }
 
 .colorChip:hover {
-    border: solid 2px red;
+    border: solid 3px blue;
+}
+
+.selected {
+    border: solid 3px red;
 }

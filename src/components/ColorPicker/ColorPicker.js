@@ -1,5 +1,6 @@
 import React from 'react';
 import './ColorPicker.css';
+import classnames from 'classnames';
 class ColorPicker extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +19,7 @@ class ColorPicker extends React.Component {
                     {selectedVehicleData.colors.map(
                         function (color, i) {
                             return <td key={"colorpicker-" + color[1]}>
-                            <img className="colorChip"
+                            <img className={this.props.selectedColor === i ? 'colorBox selected' : 'colorBox'}
                                 alt={color[0]}
                                 onClick={this.props.selectColor}
                                 data-color={i}

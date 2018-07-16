@@ -42,21 +42,23 @@ class BuildAndPrice extends React.Component {
 
     selectVehicle(eventData){
         //console.log(eventData.target.getAttribute('data-model'));
+        const selected = eventData.target.getAttribute('data-model');
         this.setState({
-            selectedVehicle: eventData.target.getAttribute('data-model')
+            selectedVehicle: selected
         });
     }
 
     selectColor(eventData){
+        const selected = eventData.target.getAttribute('data-color');
         this.setState({
-            selectedColor: eventData.target.getAttribute('data-color')
+            selectedColor: Number(selected)
         });
     }
 
     selectEngine(eventData){
-        const selectedEngine = eventData.target.getAttribute('data-engine');
+        const selected = eventData.target.getAttribute('data-engine');
         this.setState({
-            selectedEngine: Number(selectedEngine), modal: true
+            selectedEngine: Number(selected), modal: true
         });
     }
 
@@ -107,7 +109,11 @@ class BuildAndPrice extends React.Component {
                         <TabPane tabId="1">
                             <Row>
                                 <Col sm="12">
-                                    <ModelPicker selectVehicle={this.selectVehicle} />
+                                    <ModelPicker 
+                                    selectedVehicle = {this.state.selectedVehicle}
+                                    selectedColor = {this.state.selectedColor}
+                                    selectedEngine = {this.state.selectedEngine}
+                                    selectVehicle={this.selectVehicle} />
                                 </Col>
                             </Row>
                         </TabPane>
@@ -116,21 +122,28 @@ class BuildAndPrice extends React.Component {
                                 <Col sm="12">
                                 <ColorPicker
                                     selectColor = {this.selectColor}
-                                    selectedVehicle = {this.state.selectedVehicle} />
+                                    selectedVehicle = {this.state.selectedVehicle}
+                                    selectedColor = {this.state.selectedColor}
+                                    selectedEngine = {this.state.selectedEngine} />
                                 </Col>
                             </Row>
                         </TabPane>
                         <TabPane tabId="3">
                             <Row>
                                 <Col sm="12">
-                                    <EnginePicker onEngineSelect = {this.selectEngine} selectedVehicle = {this.state.selectedVehicle} />
+                                    <EnginePicker 
+                                      onEngineSelect = {this.selectEngine}
+                                      selectedVehicle = {this.state.selectedVehicle}
+                                      selectedColor = {this.state.selectedColor}
+                                      selectedEngine = {this.state.selectedEngine}
+                                     />
                                 </Col>
                             </Row>
                         </TabPane>
                         
                     </TabContent>
                     <Modal isOpen={this.state.modal} toggle={this.toggleModal}>
-                        <ModalHeader toggle={this.toggleModal}>Check Out Your New Ride!</ModalHeader>
+                        <ModalHeader toggle={this.toggleModal}>Schedule a Test Flight!</ModalHeader>
                         <ModalBody>
                             Data go here
                         </ModalBody>

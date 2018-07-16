@@ -23,18 +23,22 @@ class BuildAndPriceImageRotator extends React.Component {
         this.onExited = this.onExited.bind(this);
 
         this.selectedVehicleData = window.data.filter((vehicle) => vehicle.detailKey === this.props.selectedVehicle)[0];
-        this.items = [];
-        for(let i = 0; i < 21; i++){
-            let url = '/images/thumbnails/' + this.props.selectedVehicle + '/' + this.props.selectedVehicle ;
-            url += '-' + this.selectedVehicleData.colors[this.props.colorIndex][2]
-            url += '-thumbnails' + Numeral(i).format('00') + ".png";
-            //console.log(url);
-            this.items.push({src: url, altText: "", caption: ""});
-        }
+        this.items = this.buildItems();
     }
 
     buildItems(){
+        const items = [];
+        for(let i = 0; i < 21; i++){
+            //let's so this one step at a time so nobody (including me) gets hurt
+            let url = '/images/thumbnails/' + this.props.selectedVehicle;  //e.g. /images/thumbnails/jumper
+            url += '/' + this.props.selectedVehicle ;  //e.g. /images/thumbnails/jumper/jumper
+            url += '-' + this.selectedVehicleData.colors[this.props.colorIndex][2]  //e.g. /images/thumbnails/jumper/jumper-white
+            url += '-thumbnails' + Numeral(i).format('00') + ".png"; //e.g. /images/thumbnails/jumper/jumper-white-thumbnails01.png"
+            //console.log(url);
+            items.push({src: url, altText: "", caption: ""});
+        }
 
+        return items;
     }
     onExiting() {
         this.animating = true;

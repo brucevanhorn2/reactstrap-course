@@ -16,7 +16,8 @@ import {
     ModalHeader,
     ModalBody,
     ModalFooter,
-    Button
+    Button,
+    Progress
 } from 'reactstrap';
 
 
@@ -74,6 +75,7 @@ class BuildAndPrice extends React.Component {
         return (
             <div className="tabPanel">
                 <h3>Build and Price</h3>
+                <Progress color="primary" value="50" />
                 <Nav tabs>
                     <NavItem>
                         <NavLink

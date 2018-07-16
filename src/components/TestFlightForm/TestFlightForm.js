@@ -1,7 +1,7 @@
 import React from 'react';
 import './TestFlightForm.css';
-import { InputGroup, InputGroupAddon, InputGroupText, Input, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { InputGroup, InputGroupAddon, InputGroupText, Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class TestFlightForm extends React.Component {
     constructor(props) {
@@ -15,44 +15,51 @@ class TestFlightForm extends React.Component {
           <CardTitle>Schedule a Test Flight</CardTitle>
           <CardSubtitle>No Pilot's License Required!</CardSubtitle>
           <CardText>Fill out the form fields below to schedule a test flight.</CardText>
-          
+          <Form>
+            <FormGroup>
+                <Input type="text" name="customerName" id="customerName" placeholder="What is your name?" />
+            </FormGroup>
+            <br />
+            <FormGroup>
+                <Input type="text" name="phone" id="phone" placeholder="What is your contact number?" />
+            </FormGroup>
+            <br />
             <InputGroup>
               <InputGroupAddon addonType="prepend">@</InputGroupAddon>
-              <Input placeholder="username" />
-            </InputGroup>
-            <br />
-            <InputGroup>
-              <InputGroupAddon addonType="prepend">
-                <InputGroupText>
-                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
-                </InputGroupText>
-              </InputGroupAddon>
-              <Input placeholder="Check it out" />
-            </InputGroup>
-            <br />
-            <InputGroup>
-              <Input placeholder="username" />
-              <InputGroupAddon addonType="append">@example.com</InputGroupAddon>
+              <Input placeholder="What is your email address?" />
             </InputGroup>
             <br />
             <InputGroup>
               <InputGroupAddon addonType="prepend">
                 <InputGroupText>$</InputGroupText>
-                <InputGroupText>$</InputGroupText>
               </InputGroupAddon>
-              <Input placeholder="Dolla dolla billz yo!" />
-              <InputGroupAddon addonType="append">
-                <InputGroupText>$</InputGroupText>
-                <InputGroupText>$</InputGroupText>
-              </InputGroupAddon>
+              <Input placeholder="Do you have a budget you need to stay under?" />
             </InputGroup>
+          </Form>
+          <FormGroup tag="fieldset">
+          <legend>How did you hear about us?</legend>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Television
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Saw a Flying Car and Googled It
+            </Label>
+          </FormGroup>
+          <FormGroup check disabled>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Read about it on a bathroom wall
+            </Label>
+          </FormGroup>
+        </FormGroup>
             <br />
-            <InputGroup>
-              <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-              <Input placeholder="Amount" type="number" step="1" />
-              <InputGroupAddon addonType="append">.00</InputGroupAddon>
-            </InputGroup>
-            <Button>Button</Button>
+            
+            <Button>Submit</Button>
         </CardBody>
       </Card>
           </div>);

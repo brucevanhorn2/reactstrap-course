@@ -67,7 +67,7 @@ class BuildAndPrice extends React.Component {
         //console.log(eventData.target.getAttribute('data-model'));
         const selected = eventData.target.getAttribute('data-model');
         this.setState({
-            activeTab: 2,
+            activeTab: '2',
             userHasSelectedVehicle: true,
             selectedVehicle: selected
         });
@@ -76,7 +76,7 @@ class BuildAndPrice extends React.Component {
     selectColor(eventData){
         const selected = eventData.target.getAttribute('data-color');
         this.setState({
-            activeTab: 3,
+            activeTab: '3',
             userHasSelectedColor: true,
             selectedColor: Number(selected)
         });

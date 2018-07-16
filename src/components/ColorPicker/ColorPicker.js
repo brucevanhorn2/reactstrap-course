@@ -17,9 +17,8 @@ class ColorPicker extends React.Component {
                     <tr>
                     {selectedVehicleData.colors.map(
                         function (color, i) {
-                            return <td>
-                            <img key={"colorpicker-" + color[1]}
-                                className="colorChip"
+                            return <td key={"colorpicker-" + color[1]}>
+                            <img className="colorChip"
                                 alt={color[0]}
                                 onClick={this.props.selectColor}
                                 data-color={i}

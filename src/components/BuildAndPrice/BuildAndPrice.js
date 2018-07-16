@@ -48,9 +48,10 @@ class BuildAndPrice extends React.Component {
     }
 
     selectEngine(eventData){
+        const selectedEngine = eventData.target.getAttribute('data-engine');
+        console.log("the selected engine is " + selectedEngine);
         this.setState({
-            activeTab: '4',
-            selectedEngine: eventData.target.getAttribute('data-engine')
+            selectedEngine: selectedEngine
         })
     }
 

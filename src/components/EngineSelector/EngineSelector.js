@@ -28,7 +28,7 @@ class EngineSelector extends React.Component{
                         <DropdownMenu>
                             {selectedVehicleData.options.engines.map(
                                 function(engine, i){
-                                    return (<DropdownItem key={engine.name}>{engine.name}</DropdownItem>);
+                                    return (<DropdownItem data-engine={i} onClick={this.props.onEngineSelect} key={engine.name}>{engine.name}</DropdownItem>);
                                 }, this)}
                         </DropdownMenu>
                     </Dropdown>

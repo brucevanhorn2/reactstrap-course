@@ -21,7 +21,6 @@ import {
     Button,
     Progress
 } from 'reactstrap';
-import TestFlightForm from '../TestFlightForm';
 
 
 class BuildAndPrice extends React.Component {
@@ -32,20 +31,44 @@ class BuildAndPrice extends React.Component {
         this.selectColor = this.selectColor.bind(this);
         this.selectEngine = this.selectEngine.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.determineProgress = this.determineProgress.bind(this);
         this.state = {
             activeTab: '1',  //currently displayed tab (note it starts at 1 not 0)
             selectedVehicle: "jumper", //holds the key to the selected vehicle
+            userHasSelectedVehicle: false,
             selectedColor: 0, //holds the selected color index
+            userHasSelectedColor: false,
             selectedEngine: 0,  //holds the array index of the selected engine option
+            userHasSelectedEngine: false,
             modal: false, //controls the appearance of the modal
             done: false  //turns true when you have made all the selections
         };
+    }
+
+    determineProgress(){
+        let numberStepsCompleted = 0;
+        if(this.state.userHasSelectedVehicle){
+            numberStepsCompleted++;
+        }
+
+        if(this.state.userHasSelectedColor){
+            numberStepsCompleted++;
+        }
+
+        if(this.state.userHasSelectedEngine){
+            numberStepsCompleted++
+        }
+
+        const percentComplete = Math.ceil((numberStepsCompleted / 3) * 100);
+        return percentComplete;
     }
 
     selectVehicle(eventData){
         //console.log(eventData.target.getAttribute('data-model'));
         const selected = eventData.target.getAttribute('data-model');
         this.setState({
+            activeTab: 2,
+            userHasSelectedVehicle: true,
             selectedVehicle: selected
         });
     }
@@ -53,6 +76,8 @@ class BuildAndPrice extends React.Component {
     selectColor(eventData){
         const selected = eventData.target.getAttribute('data-color');
         this.setState({
+            activeTab: 3,
+            userHasSelectedColor: true,
             selectedColor: Number(selected)
         });
     }
@@ -60,6 +85,7 @@ class BuildAndPrice extends React.Component {
     selectEngine(eventData){
         const selected = eventData.target.getAttribute('data-engine');
         this.setState({
+            userHasSelectedEngine: true,
             selectedEngine: Number(selected), modal: true
         });
     }
@@ -82,7 +108,7 @@ class BuildAndPrice extends React.Component {
                   engineIndex={this.state.selectedEngine} />
                 <div className="tabPanel">
                     <h3>Build and Price</h3>
-                    <Progress color="primary" value="50" />
+                    <Progress className="buildAndPriceProgress" color="primary" value={this.determineProgress()} />
                     <Nav tabs>
                         <NavItem>
                             <NavLink

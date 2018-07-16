@@ -111,7 +111,7 @@ class BuildAndPrice extends React.Component {
                     <TabPane tabId="3">
                         <Row>
                             <Col sm="12">
-                                <EnginePicker selectedVehicle = {this.state.selectedVehicle} />
+                                <EnginePicker onEngineSelect = {this.selectEngine} selectedVehicle = {this.state.selectedVehicle} />
                             </Col>
                         </Row>
                     </TabPane>

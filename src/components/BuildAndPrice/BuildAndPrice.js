@@ -43,14 +43,12 @@ class BuildAndPrice extends React.Component {
     selectVehicle(eventData){
         //console.log(eventData.target.getAttribute('data-model'));
         this.setState({
-            activeTab: '2',
             selectedVehicle: eventData.target.getAttribute('data-model')
         });
     }
 
     selectColor(eventData){
         this.setState({
-            activeTab: '3',
             selectedColor: eventData.target.getAttribute('data-color')
         });
     }

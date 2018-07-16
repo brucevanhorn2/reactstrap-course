@@ -74,6 +74,7 @@ class BuildAndPriceImageRotator extends React.Component {
 
         return (
             <Carousel
+                slide = {false}
                 activeIndex={activeIndex}
                 next={this.next}
                 previous={this.previous}>

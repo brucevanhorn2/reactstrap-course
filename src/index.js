@@ -46,32 +46,6 @@ window.data = [
           thrust: "545 kN",
           topspeed: 60
         }
-      ],
-      avionics: [
-        {
-          name: "Autopilot",
-          image: "/images/thumbnails/autopilot.png",
-          description: "lorem ipsum dolare",
-          cost: 995
-        },
-        {
-          name: "IFR Package",
-          image: "/images/thumbnails/ifr.png",
-          description: "lorem ipsum dolare",
-          cost: 1995
-        },
-        {
-          name: "Cargo Organizer",
-          image: "/images/thumbnails/cargo-organizer.png",
-          description: "lorem ipsum dolare",
-          cost: 45
-        },
-        {
-          name: "Convenience Features",
-          image: "/images/thumbnails/convenience.png",
-          description: "lorem ipsum dolare",
-          cost: 55
-        }
       ]
     }
   },
@@ -120,32 +94,6 @@ window.data = [
           nmpg: 55,
           thrust: "545 kN",
           topspeed: 60
-        }
-      ],
-      avionics: [
-        {
-          name: "Autopilot",
-          image: "/images/thumbnails/autopilot.png",
-          description: "lorem ipsum dolare",
-          cost: 995
-        },
-        {
-          name: "IFR Package",
-          image: "/images/thumbnails/ifr.png",
-          description: "lorem ipsum dolare",
-          cost: 1995
-        },
-        {
-          name: "Cargo Organizer",
-          image: "/images/thumbnails/cargo-organizer.png",
-          description: "lorem ipsum dolare",
-          cost: 45
-        },
-        {
-          name: "Convenience Features",
-          image: "/images/thumbnails/convenience.png",
-          description: "lorem ipsum dolare",
-          cost: 55
         }
       ]
     }
@@ -202,26 +150,6 @@ window.data = [
           thrust: "545 kN",
           topspeed: 60
         }
-      ],
-      avionics: [
-        {
-          name: "Autopilot",
-          image: "/images/thumbnails/autopilot.png",
-          description: "lorem ipsum dolare",
-          cost: 995
-        },
-        {
-          name: "IFR Package",
-          image: "/images/thumbnails/ifr.png",
-          description: "lorem ipsum dolare",
-          cost: 1995
-        },
-        {
-          name: "Convenience Features",
-          image: "/images/thumbnails/convenience.png",
-          description: "lorem ipsum dolare",
-          cost: 55
-        }
       ]
     }
   },
@@ -252,44 +180,6 @@ window.data = [
           nmpg: 75,
           thrust: "245 kN",
           topspeed: 20
-        }
-      ],
-      avionics: [
-        {
-          name: "Autopilot",
-          image: "/images/thumbnails/autopilot.png",
-          description: "lorem ipsum dolare",
-          cost: 995
-        },
-        {
-          name: "IFR Package",
-          image: "/images/thumbnails/ifr.png",
-          description: "lorem ipsum dolare",
-          cost: 1995
-        },
-        {
-          name: "Cargo Organizer",
-          image: "/images/thumbnails/cargo-organizer.png",
-          description: "lorem ipsum dolare",
-          cost: 45
-        },
-        {
-          name: "Convenience Features",
-          image: "/images/thumbnails/convenience.png",
-          description: "lorem ipsum dolare",
-          cost: 55
-        },
-        {
-          name: "Long Range Fuel Tanks",
-          image: "/images/thumbnails/fuel-tanks.png",
-          description: "lorem ipsum dolare",
-          cost: 3500
-        },
-        {
-          name: "Concealed Hold",
-          image: "/images/thumbnails/concealed-hold.png",
-          description: "lorem ipsum dolare",
-          cost: 6000
         }
       ]
     }

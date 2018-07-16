@@ -33,7 +33,7 @@ class BuildAndPrice extends React.Component {
         this.state = {
             activeTab: '1',  //currently displayed tab (note it starts at 1 not 0)
             selectedVehicle: "jumper", //holds the key to the selected vehicle
-            selectedColor: 0, //holds the selected color
+            selectedColor: 0, //holds the selected color index
             selectedEngine: 0,  //holds the array index of the selected engine option
             modal: false, //controls the appearance of the modal
             done: false  //turns true when you have made all the selections
@@ -74,7 +74,10 @@ class BuildAndPrice extends React.Component {
     render() {
         return (
             <div>
-                <BuildAndPriceImageRotator selectedVehicle={this.state.selectedVehicle} />
+                <BuildAndPriceImageRotator 
+                  selectedVehicle={this.state.selectedVehicle} 
+                  colorIndex={this.state.selectedColor} 
+                  engineIndex={this.state.selectedEngine} />
                 <div className="tabPanel">
                     <h3>Build and Price</h3>
                     <Progress color="primary" value="50" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import './BuildAndPriceImageRotator.css';
+import Numeral from 'numeral';
 import {
     Carousel,
     CarouselItem,
@@ -21,13 +22,14 @@ class BuildAndPriceImageRotator extends React.Component {
         this.onExited = this.onExited.bind(this);
 
         this.selectedVehicleData = window.data.filter((vehicle) => vehicle.detailKey === this.props.selectedVehicle)[0];
-        this.items = this.selectedVehicleData.colors.map(function(colorData, i){
-            return {
-                src: colorData[1],
-                altText: colorData[0],
-                caption: colorData[0]
-            }
-        });
+        this.items = [];
+        for(let i = 0; i < 21; i++){
+            let url = '/images/thumbnails/' + this.props.selectedVehicle + '/' + this.props.selectedVehicle ;
+            url += '-' + this.selectedVehicleData.colors[this.props.colorIndex][2]
+            url += '-thumbnails' + Numeral(i).format('00') + ".png";
+            //console.log(url);
+            this.items.push({src: url, altText: "", caption: ""});
+        }
     }
 
     onExiting() {

@@ -14,12 +14,12 @@ window.data = [
       [
         "White Dwarf",
         "/images/thumbnails/jumper/jumper-white-thumbnails10.png",
-        "#ffffff"
+        "white"
       ],
       [
         "Red Giant",
         "/images/thumbnails/jumper/jumper-red-thumbnails10.png",
-        "#b22222"
+        "red"
       ]
     ],
     carouselImage: "/images/carousel/jumper-01.png",
@@ -58,17 +58,17 @@ window.data = [
       [
         "Red Giant",
         "/images/thumbnails/spidi/spidi-red-thumbnails10.png",
-        "#b22222"
+        "red"
       ],
       [
         "Main Sequence Blue",
         "/images/thumbnails/spidi/spidi-blue-thumbnails10.png",
-        "#000080"
+        "blue"
       ],
       [
         "Solar Yellow",
         "/images/thumbnails/spidi/spidi-yellow-thumbnails10.png",
-        "#ffd700"
+        "yellow"
       ]
     ],
     carouselImage: "/images/carousel/spidi-01.png",
@@ -108,22 +108,22 @@ window.data = [
       [
         "Nebula Purple",
         "/images/thumbnails/air-bike/air-bike-purple-thumbnails10.png",
-        "#6600cc"
+        "purple"
       ],
       [
         "Red Giant",
         "/images/thumbnails/air-bike/air-bike-red-thumbnails10.png",
-        "#b22222"
+        "red"
       ],
       [
         "Black Hole",
         "/images/thumbnails/air-bike/air-bike-black-thumbnails10.png",
-        "#000000"
+        "black"
       ],
       [
         "Solar Yellow",
         "/images/thumbnails/air-bike/air-bike-yellow-thumbnails10.png",
-        "#ffcc00"
+        "yellow"
       ]
     ],
     carouselImage: "/images/carousel/air-bike-01.png",
@@ -162,7 +162,7 @@ window.data = [
       [
         "White Dwarf",
         "/images/thumbnails/mercury-white.png",
-        "#ffffff"
+        "white"
       ]
     ],
     carouselImage: "/images/carousel/mercury-01.png",

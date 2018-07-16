@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import VehicleDetail from './components/VehicleDetail';
 import BuildAndPrice from './components/BuildAndPrice';
 import DealerLocator from './components/DealerLocator';
+import TestFlightForm from './components/TestFlightForm'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {

@@ -32,7 +32,7 @@ window.data = [
       engines: [
         {
           name: "Model A",
-          image: "/images/thumbnails/model-a.png",
+          image: "/images/engines/engine1.png",
           cost: 0,
           nmpg: 75,
           thrust: "245 kN",
@@ -40,7 +40,7 @@ window.data = [
         },
         {
           name: "Model S",
-          image: "/images/thumbnails/model-s.png",
+          image: "/images/engines/engine2.png",
           cost: 2250,
           nmpg: 55,
           thrust: "545 kN",
@@ -106,8 +106,8 @@ window.data = [
     options: {
       engines: [
         {
-          name: "Model A",
-          image: "/images/thumbnails/model-a.png",
+          name: "Boson Accelerator Mark III",
+          image: "/images/engine3.png",
           cost: 0,
           nmpg: 75,
           thrust: "245 kN",
@@ -115,7 +115,7 @@ window.data = [
         },
         {
           name: "Model S",
-          image: "/images/thumbnails/model-s.png",
+          image: "/images/engines/engine2.png",
           cost: 2250,
           nmpg: 55,
           thrust: "545 kN",
@@ -188,7 +188,7 @@ window.data = [
       engines: [
         {
           name: "Model A",
-          image: "/images/thumbnails/model-a.png",
+          image: "/images/engines/engine1.png",
           cost: 0,
           nmpg: 75,
           thrust: "245 kN",
@@ -196,7 +196,7 @@ window.data = [
         },
         {
           name: "Model S",
-          image: "/images/thumbnails/model-s.png",
+          image: "/images/engines/engine2.png",
           cost: 2250,
           nmpg: 55,
           thrust: "545 kN",
@@ -246,20 +246,12 @@ window.data = [
     options: {
       engines: [
         {
-          name: "Model A",
-          image: "/images/thumbnails/model-a.png",
+          name: "Mercury Mark VI",
+          image: "/images/engines/engine4.png",
           cost: 0,
           nmpg: 75,
           thrust: "245 kN",
           topspeed: 20
-        },
-        {
-          name: "Model S",
-          image: "/images/thumbnails/model-s.png",
-          cost: 2250,
-          nmpg: 55,
-          thrust: "545 kN",
-          topspeed: 60
         }
       ],
       avionics: [

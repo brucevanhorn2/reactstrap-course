@@ -4,6 +4,7 @@ import './BuildAndPrice.css';
 import ColorPicker from '../ColorPicker/ColorPicker';
 import ModelPicker from '../ModelPicker/ModelPicker';
 import EnginePicker from '../EngineSelector/EngineSelector';
+import TestFlightForm from '../TestFlightForm/TestFlightForm';
 import BuildAndPriceImageRotator from '../BuildAndPriceImageRotator/BuildAndPriceImageRotator';
 import {
     TabContent,
@@ -20,6 +21,7 @@ import {
     Button,
     Progress
 } from 'reactstrap';
+import TestFlightForm from '../TestFlightForm';
 
 
 class BuildAndPrice extends React.Component {
@@ -145,7 +147,7 @@ class BuildAndPrice extends React.Component {
                     <Modal isOpen={this.state.modal} toggle={this.toggleModal}>
                         <ModalHeader toggle={this.toggleModal}>Schedule a Test Flight!</ModalHeader>
                         <ModalBody>
-                            Data go here
+                            <TestFlightForm />
                         </ModalBody>
                         <ModalFooter>
                             <Button color="primary" onClick = {this.toggleModal}>Done!</Button>

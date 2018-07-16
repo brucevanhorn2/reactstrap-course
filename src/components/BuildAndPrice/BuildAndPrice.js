@@ -11,7 +11,12 @@ import {
     NavItem,
     NavLink,
     Row,
-    Col
+    Col,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    Button
 } from 'reactstrap';
 
 
@@ -22,13 +27,14 @@ class BuildAndPrice extends React.Component {
         this.selectVehicle = this.selectVehicle.bind(this);
         this.selectColor = this.selectColor.bind(this);
         this.selectEngine = this.selectEngine.bind(this);
-        this.selectOptions = this.selectOptions.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
         this.state = {
-            activeTab: '1',
-            selectedVehicle: "",
-            selectedColor: 0,
-            selectedEngine: 0,
-            selectedOptions: []
+            activeTab: '1',  //currently displayed tab (note it starts at 1 not 0)
+            selectedVehicle: "", //holds the key to the selected vehicle
+            selectedColor: 0, //holds the selected color
+            selectedEngine: 0,  //holds the array index of the selected engine option
+            modal: false, //controls the appearance of the modal
+            done: false  //turns true when you have made all the selections
         };
     }
 
@@ -51,13 +57,14 @@ class BuildAndPrice extends React.Component {
         const selectedEngine = eventData.target.getAttribute('data-engine');
         console.log("the selected engine is " + selectedEngine);
         this.setState({
-            selectedEngine: selectedEngine
+            selectedEngine: Number(selectedEngine), modal: true
         })
     }
 
-    selectOptions(eventData){
-        //show modal with all the options
+    toggleModal(){
+        this.setState({modal: !this.state.modal});
     }
+
     toggle(tab) {
         if (tab !== this.state.activeTab) {
             this.setState({ activeTab: tab });
@@ -117,7 +124,15 @@ class BuildAndPrice extends React.Component {
                     </TabPane>
                     
                 </TabContent>
-
+                <Modal isOpen={this.state.modal} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Check Out Your New Ride!</ModalHeader>
+                    <ModalBody>
+                        Data go here
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="primary" onClick = {this.toggleModal}>Done!</Button>
+                    </ModalFooter>
+                </Modal>
             </div>);
     }
 }

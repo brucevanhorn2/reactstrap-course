@@ -19,7 +19,7 @@ class VehicleDetail extends React.Component {
             </Row>
             <Row>
                 <Col>
-                    <h1> {selectedVehicleData.model}</h1>
+                    <h1> {selectedVehicleData.modelYear} {selectedVehicleData.model}</h1>
                     <h2>{selectedVehicleData.tagline}</h2>
                 </Col>
             </Row>

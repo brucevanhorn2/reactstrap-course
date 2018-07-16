@@ -15,8 +15,14 @@ class ModelPicker extends React.Component {
             <div>
                 <Row>
                     <Col sm="12">
-                        <ModelPickerCollapse
-                            selectVehicle={this.props.selectVehicle} />
+                    {window.data.map(function(vehicle, i){
+                        return <ModelPickerCollapse
+                        key={"model-picker-" + vehicle.detailKey}
+                        selectedVehicle={vehicle}
+                        selectVehicle={this.props.selectVehicle}
+                        />
+                    }, this)}
+                        
                     </Col>
                 </Row>
             </div>

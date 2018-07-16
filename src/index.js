@@ -31,7 +31,7 @@ window.data = [
     options: {
       engines: [
         {
-          name: "Model A",
+          name: "Alpha Centauri Mark II",
           image: "/images/engines/engine1.png",
           cost: 0,
           nmpg: 75,
@@ -39,7 +39,7 @@ window.data = [
           topspeed: 20
         },
         {
-          name: "Model S",
+          name: "Singularity Engine Mark V",
           image: "/images/engines/engine2.png",
           cost: 2250,
           nmpg: 55,
@@ -114,7 +114,7 @@ window.data = [
           topspeed: 20
         },
         {
-          name: "Model S",
+          name: "Singularity Engine Mark V",
           image: "/images/engines/engine2.png",
           cost: 2250,
           nmpg: 55,
@@ -187,7 +187,7 @@ window.data = [
     options: {
       engines: [
         {
-          name: "Model A",
+          name: "Alpha Centauri Mark II",
           image: "/images/engines/engine1.png",
           cost: 0,
           nmpg: 75,
@@ -195,7 +195,7 @@ window.data = [
           topspeed: 20
         },
         {
-          name: "Model S",
+          name: "Singularity Engine Mark V",
           image: "/images/engines/engine2.png",
           cost: 2250,
           nmpg: 55,

@@ -26,12 +26,10 @@ class EngineSelector extends React.Component{
                             Select a Powerplant
                         </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem>Engine A</DropdownItem>
-                            <DropdownItem disabled>Engine B</DropdownItem>
-                            <DropdownItem separator></DropdownItem>
-                            <DropdownItem header>Engine C</DropdownItem>
-                            <DropdownItem>Engine D</DropdownItem>
-                            <DropdownItem>Engine E</DropdownItem>
+                            {selectedVehicleData.options.engines.map(
+                                function(engine, i){
+                                    return (<DropdownItem key={engine.name}>{engine.name}</DropdownItem>);
+                                }, this)}
                         </DropdownMenu>
                     </Dropdown>
                 </div>

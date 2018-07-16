@@ -1,3 +1,9 @@
+This is the project built in the Pakt Publishing course titled "Hands On Bootstrap with React"
+By Bruce M. Van Horn II
+
+In the course, we cover setting up this project from scratch.  As part of that process, a readme file gets automatically generated
+by create-react-app.  Since there's a lot of good info in there, I'm going to leave it intact.
+----------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

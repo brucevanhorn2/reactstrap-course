@@ -25,9 +25,11 @@ class App extends Component {
             <Route path='/detail/:selectedVehicle' component={VehicleDetail} />
             <Route path='/find-a-dealer' component={DealerLocator} />
             <Route path='/build-and-price' component={BuildAndPrice} />
+            <Route path='/schedule-test-flight' component={TestFlightForm} />
           </div>
-          
+          <Footer />  
         </div>
+        
       </Router>
     );
   }

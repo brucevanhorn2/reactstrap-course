@@ -67,7 +67,7 @@ class BuildAndPriceImageRotator extends React.Component {
 
     render(){
         const { activeIndex } = this.state;
-        let items = this.buildItems();
+        const items = this.buildItems();
         const slides = items.map((item) => {
             return (
                 <CarouselItem

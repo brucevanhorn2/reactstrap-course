@@ -6,6 +6,7 @@ import ModelPicker from '../ModelPicker/ModelPicker';
 import EnginePicker from '../EngineSelector/EngineSelector';
 import TestFlightForm from '../TestFlightForm/TestFlightForm';
 import BuildAndPriceImageRotator from '../BuildAndPriceImageRotator/BuildAndPriceImageRotator';
+import Numeral from 'numeral';
 import {
     TabContent,
     TabPane,
@@ -32,6 +33,7 @@ class BuildAndPrice extends React.Component {
         this.selectEngine = this.selectEngine.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
         this.determineProgress = this.determineProgress.bind(this);
+        this.computePrice = this.computePrice.bind(this);
         this.state = {
             activeTab: '1',  //currently displayed tab (note it starts at 1 not 0)
             selectedVehicle: "jumper", //holds the key to the selected vehicle
@@ -41,7 +43,9 @@ class BuildAndPrice extends React.Component {
             selectedEngine: 0,  //holds the array index of the selected engine option
             userHasSelectedEngine: false,
             modal: false, //controls the appearance of the modal
-            done: false  //turns true when you have made all the selections
+            done: false,  //turns true when you have made all the selections
+            engineCost: 0,
+            msrp: 36000
         };
     }
 
@@ -66,8 +70,10 @@ class BuildAndPrice extends React.Component {
     selectVehicle(eventData){
         //console.log(eventData.target.getAttribute('data-model'));
         const selected = eventData.target.getAttribute('data-model');
+        const msrp = eventData.target.getAttribute('data-msrp');
         this.setState({
             activeTab: '2',
+            msrp: msrp,
             userHasSelectedVehicle: true,
             selectedVehicle: selected
         });
@@ -75,23 +81,31 @@ class BuildAndPrice extends React.Component {
 
     selectColor(eventData){
         const selected = eventData.target.getAttribute('data-color');
+        const selectedColorName = eventData.target.getAttribute('data-color-name')
         this.setState({
             activeTab: '3',
             userHasSelectedColor: true,
-            selectedColor: Number(selected)
+            selectedColor: Number(selected),
+            selectedColorName: selectedColorName
         });
     }
 
     selectEngine(eventData){
         const selected = eventData.target.getAttribute('data-engine');
+        const engineCost = eventData.target.getAttribute('data-engine-cost');
         this.setState({
             userHasSelectedEngine: true,
-            selectedEngine: Number(selected), modal: true
+            selectedEngine: Number(selected), modal: true,
+            engineCost: engineCost
         });
     }
 
     toggleModal(){
         this.setState({modal: !this.state.modal});
+    }
+
+    computePrice(){
+        return Number(this.state.msrp) + Number(this.state.engineCost);
     }
 
     toggle(tab) {
@@ -102,12 +116,15 @@ class BuildAndPrice extends React.Component {
     render() {
         return (
             <div>
+                <h3>Build and Price</h3>
                 <BuildAndPriceImageRotator 
                   selectedVehicle={this.state.selectedVehicle} 
-                  colorIndex={this.state.selectedColor} 
+                  colorIndex={this.state.selectedColor}
+                  colorName = {this.state.selectedColorName}
+                  cost={this.computePrice()}
                   engineIndex={this.state.selectedEngine} />
+                  <h4>Price as configured: {Numeral(this.computePrice()).format('$0,0.00')}</h4>
                 <div className="tabPanel">
-                    <h3>Build and Price</h3>
                     <Progress className="buildAndPriceProgress" color="primary" value={this.determineProgress()} />
                     <Nav tabs>
                         <NavItem>

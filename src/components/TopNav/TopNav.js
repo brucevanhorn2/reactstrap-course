@@ -47,7 +47,7 @@ class TopNav extends React.Component {
       <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
         <NavItem>
-          <NavLink href="/"><i class="fas fa-home"></i> Home</NavLink>
+          <NavLink href="/"><i className="fas fa-home"></i> Home</NavLink>
         </NavItem>
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>

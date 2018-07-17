@@ -121,9 +121,9 @@ window.data = [
         "purple"
       ],
       [
-        "Red Giant",
-        "/images/thumbnails/air-bike/air-bike-red-thumbnails10.png",
-        "red"
+        "Main Sequence Blue",
+        "/images/thumbnails/air-bike/air-bike-blue-thumbnails10.png",
+        "blue"
       ],
       [
         "Black Hole",

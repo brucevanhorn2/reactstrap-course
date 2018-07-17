@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Axios from 'axios';
 import TopNav from './components/TopNav';
 import Home from './components/Home';
 import Footer from './components/Footer';
@@ -17,13 +16,6 @@ class App extends Component {
     this.state={vehicleData: {}}
   }
 
-  componentDidMount(){
-    Axios
-      .get('http://localhost:3001/vehicles/')
-      //.then(res => this.setState({vehicleData: res.data}))
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
-  }
   render() {
     console.log(window.data);
     return (

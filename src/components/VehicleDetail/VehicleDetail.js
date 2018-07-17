@@ -1,12 +1,21 @@
 import React from 'react';
 import './VehicleDetail.css';
+import Axios from 'axios';
 import { Row, Col, Media } from 'reactstrap';
 
 class VehicleDetail extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { selectedVehicle: "" }
+        this.state = { vehicleData: {}, selectedVehicle: "" }
     }
+
+    componentDidMount(){
+        Axios
+          .get('http://localhost:3001/vehicles/')
+          .then(res => this.setState({vehicleData: res.data}))
+          //.then(res => console.log(res.data))
+          .catch(err => console.log(err));
+      }
 
     render() {
         const { selectedVehicle } = this.props.match.params;

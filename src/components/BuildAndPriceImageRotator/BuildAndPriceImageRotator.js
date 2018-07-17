@@ -33,7 +33,7 @@ class BuildAndPriceImageRotator extends React.Component {
             url += '-' + selectedVehicleData.colors[Number(this.props.colorIndex)][2]  //e.g. /images/thumbnails/jumper/jumper-white
             url += '-thumbnails' + Numeral(i).format('00') + ".png"; //e.g. /images/thumbnails/jumper/jumper-white-thumbnails01.png"
             //console.log(url);
-            items.push({src: url, altText: this.props.cost, caption: this.props.colorName});
+            items.push({src: url, altText: "", caption: ""});
         }
 
         return items;

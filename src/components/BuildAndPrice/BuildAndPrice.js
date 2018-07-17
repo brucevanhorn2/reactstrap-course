@@ -39,8 +39,10 @@ class BuildAndPrice extends React.Component {
             selectedVehicle: "jumper", //holds the key to the selected vehicle
             userHasSelectedVehicle: false,
             selectedColor: 0, //holds the selected color index
+            selectedColorName: 'White Dwarf',
             userHasSelectedColor: false,
             selectedEngine: 0,  //holds the array index of the selected engine option
+            selectedEngineName: "Alpha Centauri Mark II",
             userHasSelectedEngine: false,
             modal: false, //controls the appearance of the modal
             done: false,  //turns true when you have made all the selections
@@ -93,9 +95,11 @@ class BuildAndPrice extends React.Component {
     selectEngine(eventData){
         const selected = eventData.target.getAttribute('data-engine');
         const engineCost = eventData.target.getAttribute('data-engine-cost');
+        const engineName = eventData.target.getAttribute('data-engine-name');
         this.setState({
             userHasSelectedEngine: true,
             selectedEngine: Number(selected), modal: true,
+            selectedEngineName: engineName,
             engineCost: engineCost
         });
     }
@@ -123,7 +127,9 @@ class BuildAndPrice extends React.Component {
                   colorName = {this.state.selectedColorName}
                   cost={this.computePrice()}
                   engineIndex={this.state.selectedEngine} />
-                  <h4>Price as configured: {Numeral(this.computePrice()).format('$0,0.00')}</h4>
+                  <h4>Color: {this.state.selectedColorName}</h4>
+                  <h5>Engine: {this.state.selectedEngineName}</h5>
+                  <h5>Price as configured: {Numeral(this.computePrice()).format('$0,0.00')}</h5>
                 <div className="tabPanel">
                     <Progress className="buildAndPriceProgress" color="primary" value={this.determineProgress()} />
                     <Nav tabs>

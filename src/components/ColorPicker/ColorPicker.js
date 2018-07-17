@@ -23,6 +23,7 @@ class ColorPicker extends React.Component {
                                 alt={color[0]}
                                 onClick={this.props.selectColor}
                                 data-color={i}
+                                data-color-name={color[0]}
                                 src={color[1]} /><br/>
                                 <span>{color[0]}</span>
                             </td>

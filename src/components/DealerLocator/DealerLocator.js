@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 import {
     Row,
     Col,
@@ -18,28 +19,29 @@ class DealerLocator extends React.Component {
     constructor(props) {
         super(props);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.state = { searchTerm: "", resultsToggle: false }
+        this.state = { searchTerm: "", resultsToggle: false, dealerships: null }
         this.onClearClicked = this.onClearClicked.bind(this);
         this.onListClick = this.onListClick.bind(this);
-        this.stubData = [
-            {
-                dealershipName: 'Slick Willy\'s Flying Cars',
-                address: '555 Nearby St.  Ada, Oklahoma 74820',
-                phone: '1-800-fly-cars'
-            },
-            {
-                dealershipName: 'Dewey, Cheatham, &amp; Howe Auto Sales',
-                address: '123 Test St. Dallas Texas, 75001',
-                phone: '1-800-pay-here'
-            },
-            {
-                dealershipName: 'Ima Crooke Flying Car Sales',
-                address: '234 Booyah Ln. San Mateo California, 75001',
-                phone: '1-888-fak-enum'
-            },
-
-        ]
+        
     }
+
+    componentDidMount(){
+        if(sessionStorage.getItem("dealerships")){
+            const data = JSON.parse(sessionStorage.getItem("dealerships"));
+            this.setState({dealerships: data});
+        } else {
+        Axios
+          .get('http://localhost:3001/dealerships/')
+          .then(res => {
+              //store it to session storage
+              sessionStorage.setItem("dealerships", JSON.stringify(res.data));
+              this.setState({dealerships: res.data});
+            })
+          //.then(res => console.log(res.data))
+          .catch(err => console.log(err));
+      }
+    }
+
     onClearClicked(eventData){
         eventData.preventDefault();
         this.setState({searchTerm: ''});
@@ -57,7 +59,8 @@ class DealerLocator extends React.Component {
     }
 
     render() {
-        const filteredStubData = this.stubData.filter(d => d.address.includes(this.state.searchTerm));
+        if(this.state.dealerships){
+        const filteredStubData = this.state.dealerships.filter(d => d.address.includes(this.state.searchTerm));
         let searchBar = <div><h1>Over 100 Authorized Dealers Nationwide</h1>
             <Row>
                 <Col sm={12} md={{ size: 6, offset: 3 }}>
@@ -131,6 +134,9 @@ class DealerLocator extends React.Component {
                 </div>
             );
         }
+    } else {
+        return null;
+    }
     }
 }
 export default DealerLocator;

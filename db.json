@@ -186,5 +186,22 @@
       ]
     }
 }],
+"dealerships":[
+  {
+      "dealershipName": "Slick Willy's Flying Cars",
+      "address": "555 Nearby St.  Ada, Oklahoma 74820",
+      "phone": "1-800-fly-cars"
+  },
+  {
+      "dealershipName": "Dewey, Cheatham, &amp; Howe Auto Sales",
+      "address": "123 Test St. Dallas Texas, 75001",
+      "phone": "1-800-pay-here"
+  },
+  {
+      "dealershipName": "Ima Crooke Flying Car Sales",
+      "address": "234 Booyah Ln. San Mateo California, 75001",
+      "phone": "1-888-fak-enum"
+  }
+],
 "mailingList": []
   }

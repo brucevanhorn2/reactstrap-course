@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-         <TopNav />
+         
           <div className="contentArea">
             <Route exact path='/' component={Home} />
             <Route path='/detail/:selectedVehicle' component={VehicleDetail} />

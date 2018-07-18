@@ -7,7 +7,7 @@ import VehicleBrowser from '../VehicleBrowser';
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state={vehicleData: {}}
+        this.state={vehicleData: null}
     }
 
     componentDidMount(){
@@ -19,11 +19,15 @@ class Home extends React.Component {
       }
 
     render() {
+        if(this.state.vehicleData){
         return (
             <div>
                 <SiteCarousel vehicleData={this.state.vehicleData} />
                 <VehicleBrowser vehicleData={this.state.vehicleData}  /> 
             </div>);
+        } else {
+            return null;
+        }
     }
 }
 

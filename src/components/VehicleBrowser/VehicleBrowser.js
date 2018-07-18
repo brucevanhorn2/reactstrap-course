@@ -11,9 +11,9 @@ class VehicleBrowser extends React.Component {
     }
 
     render() {
-        const VehicleSelections = window.data.map((item) => {
+        const VehicleSelections = this.props.vehicleData.map((item) => {
             console.log(item.thumbnail);
-            return <Col key={item.detailKey}  md={ Math.ceil(12 / window.data.length) }>
+            return <Col key={item.detailKey}  md={ Math.ceil(12 / this.props.vehicleData.length) }>
                 <Card>
                     <CardImg top width="100%" src={item.thumbnail} alt={item.altText} />
                     <CardBody>

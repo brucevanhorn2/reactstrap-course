@@ -33,13 +33,13 @@ class SiteCarousel extends React.Component{
 
       next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === window.data.length - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === this.props.vehicleData - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
       }
 
       previous() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? this.props.data.length - 1 : this.state.activeIndex - 1;
+        const nextIndex = this.state.activeIndex === 0 ? this.props.vehicleData.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
       }
 
@@ -50,7 +50,7 @@ class SiteCarousel extends React.Component{
 
       render(){
         const { activeIndex } = this.state;
-        const slides = window.data.map((item) => {
+        const slides = this.props.vehicleData.map((item) => {
         return (
           <CarouselItem
             onExiting={this.onExiting}
@@ -68,7 +68,7 @@ class SiteCarousel extends React.Component{
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={window.data} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators items={this.props.vehicleData} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />

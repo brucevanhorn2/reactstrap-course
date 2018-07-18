@@ -24,7 +24,7 @@ class BuildAndPriceImageRotator extends React.Component {
     }
 
     buildItems(){
-        const selectedVehicleData = window.data.filter((vehicle) => vehicle.detailKey === this.props.selectedVehicle)[0];
+        const selectedVehicleData = this.props.vehicleData.filter((vehicle) => vehicle.detailKey === this.props.selectedVehicle)[0];
         let items = [];
         for(let i = 0; i < 21; i++){
             //let's so this one step at a time so nobody (including me) gets hurt

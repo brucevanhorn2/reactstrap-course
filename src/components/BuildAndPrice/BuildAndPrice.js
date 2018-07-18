@@ -122,6 +122,7 @@ class BuildAndPrice extends React.Component {
             <div>
                 <h3>Build and Price</h3>
                 <BuildAndPriceImageRotator 
+                  vehicleData = {this.props.vehicleData}
                   selectedVehicle={this.state.selectedVehicle} 
                   colorIndex={this.state.selectedColor}
                   colorName = {this.state.selectedColorName}
@@ -161,6 +162,7 @@ class BuildAndPrice extends React.Component {
                             <Row>
                                 <Col sm="12">
                                     <ModelPicker 
+                                    vehicleData = {this.props.vehicleData}
                                     selectedVehicle = {this.state.selectedVehicle}
                                     selectedColor = {this.state.selectedColor}
                                     selectedEngine = {this.state.selectedEngine}
@@ -173,6 +175,7 @@ class BuildAndPrice extends React.Component {
                                 <Col sm="12">
                                 <ColorPicker
                                     selectColor = {this.selectColor}
+                                    vehicleData = {this.props.vehicleData}
                                     selectedVehicle = {this.state.selectedVehicle}
                                     selectedColor = {this.state.selectedColor}
                                     selectedEngine = {this.state.selectedEngine} />
@@ -183,6 +186,7 @@ class BuildAndPrice extends React.Component {
                             <Row>
                                 <Col sm="12">
                                     <EnginePicker 
+                                      vehicleData = {this.props.vehicleData}
                                       onEngineSelect = {this.selectEngine}
                                       selectedVehicle = {this.state.selectedVehicle}
                                       selectedColor = {this.state.selectedColor}

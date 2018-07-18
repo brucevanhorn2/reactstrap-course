@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   componentDidMount(){
-    debugger;
     if(sessionStorage.getItem("vehicleData")){
         const data = JSON.parse(sessionStorage.getItem("vehicleData"));
         this.setState({vehicleData: data});
@@ -35,11 +34,12 @@ class App extends Component {
   }
 }
   render() {
-    debugger;
+    
     if(this.state.vehicleData){
     return (
       <Router>
         <div className="App">
+          <TopNav vehicleData = {this.state.vehicleData} />
           <div className="contentArea">
             <Route exact path='/' render={(props) => <Home {...props} vehicleData={this.state.vehicleData} />} />
             <Route path='/detail/:selectedVehicle' render={(props) =><VehicleDetail {...props} vehicleData={this.state.vehicleData} />} />

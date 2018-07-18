@@ -31,7 +31,7 @@ class TopNav extends React.Component {
   }
 
   render() {
-    const VehicleSelections = window.data.map((item) => {
+    const VehicleSelections = this.props.vehicleData.map((item) => {
       return <DropdownItem
                 key={item.detailKey}
                 >

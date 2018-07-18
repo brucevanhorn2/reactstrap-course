@@ -1,6 +1,5 @@
 import React from 'react';
 import './VehicleDetail.css';
-import Axios from 'axios';
 import { Row, Col, Media } from 'reactstrap';
 
 class VehicleDetail extends React.Component {
@@ -9,17 +8,9 @@ class VehicleDetail extends React.Component {
         this.state = { vehicleData: {}, selectedVehicle: "" }
     }
 
-    componentDidMount(){
-        Axios
-          .get('http://localhost:3001/vehicles/')
-          .then(res => this.setState({vehicleData: res.data}))
-          //.then(res => console.log(res.data))
-          .catch(err => console.log(err));
-      }
-
     render() {
         const { selectedVehicle } = this.props.match.params;
-        const selectedVehicleData = window.data.filter((vehicle) => vehicle.detailKey === selectedVehicle)[0];
+        const selectedVehicleData = this.props.vehicleData.filter((vehicle) => vehicle.detailKey === selectedVehicle)[0];
         return (<div>
             <Row>
                 <Col>

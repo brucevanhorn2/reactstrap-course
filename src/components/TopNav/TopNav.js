@@ -48,7 +48,7 @@ class TopNav extends React.Component {
         <Nav className="ml-auto" navbar>
         <NavItem>
           <NavLink href="/"><i className="fas fa-home"></i> Home</NavLink>
-        np</NavItem>
+        </NavItem>
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>
               <i className="fas fa-space-shuttle"></i> Flying Cars

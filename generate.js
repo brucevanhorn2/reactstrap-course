@@ -133,7 +133,10 @@ module.exports = function(){
             return{
                 id: n,
                 dealershipName: faker.name.findName() + "'s Flying Cars",
-                address: faker.address.streetAddress("####") + ' ' + faker.address.city() + " " + faker.address.state() + " " + faker.address.zipCode(),
+                address: faker.address.streetAddress("####"),
+                city: faker.address.city(),
+                state: faker.address.state(),
+                zip: faker.address.zipCode(),
                 phone: faker.phone.phoneNumber()
             }
         })

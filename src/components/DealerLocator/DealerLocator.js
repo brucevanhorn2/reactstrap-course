@@ -53,6 +53,7 @@ class DealerLocator extends React.Component {
         const stateClicked = eventData.target.text.split(" ")[0];
         this.setState({searchTerm: stateClicked});
     }
+
     handleInputChange(eventData) {
         //console.log("You typed in " + eventData.target.value);
         this.setState({ searchTerm: eventData.target.value });
@@ -60,7 +61,7 @@ class DealerLocator extends React.Component {
 
     render() {
         if(this.state.dealerships){
-        const filteredStubData = this.state.dealerships.filter(d => d.address.includes(this.state.searchTerm));
+        const filteredStubData = this.state.dealerships.filter(d => d.state.includes(this.state.searchTerm));
         let searchBar = <div><h1>Over 100 Authorized Dealers Nationwide</h1>
             <Row>
                 <Col sm={12} md={{ size: 6, offset: 3 }}>

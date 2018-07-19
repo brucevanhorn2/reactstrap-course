@@ -62,6 +62,14 @@ class DealerLocator extends React.Component {
     render() {
         if(this.state.dealerships){
         const filteredStubData = this.state.dealerships.filter(d => d.state.includes(this.state.searchTerm));
+        let stateCounter = this.state.dealerships.reduce(
+            function(dealerStateCount, dealer){
+                dealerStateCount[dealer.state] = (dealerStateCount[dealer.state] || 0) + 1;
+                return dealerStateCount;
+            }, this
+        );
+        
+        //console.log(stateCounter);
         let searchBar = <div><h1>Over 100 Authorized Dealers Nationwide</h1>
             <Row>
                 <Col sm={12} md={{ size: 6, offset: 3 }}>
@@ -85,6 +93,7 @@ class DealerLocator extends React.Component {
 
         if (this.state.searchTerm.length < 4) {
             //console.log(filteredStubData);
+
             return (
                 <div>
                     {searchBar}

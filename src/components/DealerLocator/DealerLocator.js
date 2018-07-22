@@ -26,20 +26,20 @@ class DealerLocator extends React.Component {
     }
 
     componentDidMount() {
-        if (sessionStorage.getItem("dealerships")) {
-            const data = JSON.parse(sessionStorage.getItem("dealerships"));
-            this.setState({ dealerships: data });
-        } else {
             Axios
                 .get('http://localhost:3001/dealerships/')
                 .then(res => {
                     //store it to session storage
-                    sessionStorage.setItem("dealerships", JSON.stringify(res.data));
-                    this.setState({ dealerships: res.data });
+                   
+                    let stateCounter = res.data.reduce(
+                        function (dealerStateCount, dealer) {
+                            dealerStateCount[dealer.state] = (dealerStateCount[dealer.state] || 0) + 1;
+                            return dealerStateCount;
+                        }, this
+                    );
+                    this.setState({ dealerships: res.data, stateCounter: stateCounter });
                 })
-                //.then(res => console.log(res.data))
                 .catch(err => console.log(err));
-        }
     }
 
     onClearClicked(eventData) {
@@ -62,14 +62,7 @@ class DealerLocator extends React.Component {
     render() {
         if (this.state.dealerships) {
             const filteredStubData = this.state.dealerships.filter(d => d.state.includes(this.state.searchTerm));
-            let stateCounter = this.state.dealerships.reduce(
-                function (dealerStateCount, dealer) {
-                    dealerStateCount[dealer.state] = (dealerStateCount[dealer.state] || 0) + 1;
-                    return dealerStateCount;
-                }, this
-            );
 
-            console.log(stateCounter);
             let searchBar = <div><h1>Over {this.state.dealerships.length} Authorized Dealers Nationwide</h1>
                 <Row>
                     <Col sm={12} md={{ size: 6, offset: 3 }}>
@@ -93,23 +86,27 @@ class DealerLocator extends React.Component {
 
             if (this.state.searchTerm.length < 4) {
                 //console.log(filteredStubData);
+                let stateCounterMarkup = null;
+                if(this.state.stateCounter){
+                    stateCounterMarkup = <Row>
+                    <Col sm="12" md={{ size: 10, offset: 1 }}>
+                        <ListGroup>
+                            {Object.keys(this.state.stateCounter).sort().map(function (key, i) {
+                                if (typeof this.state.stateCounter[key] === 'number') {
+                                    return (<ListGroupItem tag="a" href="#" key={key + i} onClick = {this.onListClick} className='justify-content-between'>
+                                        {key} <Badge pill>{this.state.stateCounter[key]}</Badge>
+                                        </ListGroupItem>)
+                                    }
+                                }, this)
+                            }
+                        </ListGroup>
+                    </Col>
+                </Row>
+                }
                 return (
                     <div>
                         {searchBar}
-                        <Row>
-                            <Col sm="12" md={{ size: 10, offset: 1 }}>
-                                <ListGroup>
-                                    {Object.keys(stateCounter).sort().map(function (key, i) {
-                                        if (typeof stateCounter[key] === 'number') {
-                                            return (<ListGroupItem tag="a" href="#" key={key + i} onClick = {this.onListClick} className='justify-content-between'>
-                                                {key} <Badge pill>{stateCounter[key]}</Badge>
-                                                </ListGroupItem>)
-                                            }
-                                        }, this)
-                                    }
-                                </ListGroup>
-                            </Col>
-                        </Row>
+                        {stateCounterMarkup}
                     </div>
                 )
             } else {

@@ -33,13 +33,14 @@ class SiteCarousel extends React.Component{
 
       next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === this.props.vehicleData - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === this.props.vehicleData.length - 1 ? 0 : this.state.activeIndex + 1;
+        console.log(nextIndex);
         this.setState({ activeIndex: nextIndex });
       }
 
       previous() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? this.props.vehicleData.length - 1 : this.state.activeIndex - 1;
+        const nextIndex = this.state.activeIndex === this.props.vehicleData.length - 1 ? 0 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
       }
 

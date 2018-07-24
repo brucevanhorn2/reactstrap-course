@@ -51,14 +51,16 @@ class SiteCarousel extends React.Component{
 
       render(){
         const { activeIndex } = this.state;
-        const slides = this.props.vehicleData.map((item) => {
+        const slides = this.props.vehicleData.map((item, i) => {
         return (
           <CarouselItem
             onExiting={this.onExiting}
             onExited={this.onExited}
             key={item.carouselImage}
           >
+          <a href={"/detail/" + item.detailKey}>
             <img className={"carouselImage"} src={item.carouselImage} alt={item.altText} />
+          </a>
             <CarouselCaption captionText="" captionHeader="" />
           </CarouselItem>
         );

@@ -130,6 +130,7 @@ module.exports = function(){
             }
         }],
         dealerships: _.times(100, function(n){
+            let foo = "bar";
             return{
                 id: n,
                 dealershipName: faker.name.findName() + "'s Flying Cars",

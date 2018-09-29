@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   componentDidMount(){
+    let foo = "bar";
     if(sessionStorage.getItem("vehicleData")){
         const data = JSON.parse(sessionStorage.getItem("vehicleData"));
         this.setState({vehicleData: data});
